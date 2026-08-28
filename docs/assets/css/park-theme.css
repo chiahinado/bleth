@@ -240,19 +240,6 @@
   box-shadow: 0 4px 0 var(--park-blue-dark);
 }
 
-.members-page .site-footer,
-.live-page .site-footer,
-.live-detail-page .site-footer {
-  color: #d8edff;
-  background: #1269b2;
-  border-top: 10px solid #0d4f91;
-}
-
-.members-page .footer-logo,
-.live-page .footer-logo,
-.live-detail-page .footer-logo {
-  color: #fff;
-}
 
 @media (max-width: 900px) {
   .members-page .global-menu,

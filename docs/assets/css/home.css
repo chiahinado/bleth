@@ -179,15 +179,6 @@
   pointer-events: none;
 }
 
-.home-page .site-footer {
-  color: #d8edff;
-  background: #1269b2;
-  border-top: 10px solid #0d4f91;
-}
-
-.home-page .footer-logo {
-  color: #fff;
-}
 
 @media (max-width: 900px) {
   .home-page .global-menu {

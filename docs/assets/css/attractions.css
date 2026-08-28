@@ -285,26 +285,19 @@
 }
 
 .song-content {
-  display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-  gap: 30px;
   padding-block: 70px 105px;
 }
 
 .song-sidebar {
   display: grid;
-  align-content: start;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: start;
   gap: 26px;
 }
 
 .song-meta,
-.song-comment,
-.song-notice,
-.lyrics-panel {
+.song-comment {
   padding: clamp(26px, 4vw, 42px);
-}
-.song-notice {
-  align-self: start;
 }
 
 
@@ -345,22 +338,6 @@
   line-height: 1.95;
 }
 
-.lyrics-panel {
-  min-width: 0;
-}
-
-.lyrics-text {
-  display: grid;
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.lyrics-text p {
-  margin: 0;
-  color: #294760;
-  font-size: clamp(0.94rem, 1.6vw, 1.05rem);
-  line-height: 2.15;
-}
 
 .song-pager {
   display: grid;
@@ -1212,15 +1189,6 @@
   padding-bottom: 90px;
 }
 
-.park-attraction-page .site-footer {
-  color: #d8edff;
-  background: #1269b2;
-  border-top: 10px solid #0d4f91;
-}
-
-.park-attraction-page .footer-logo {
-  color: #fff;
-}
 
 @keyframes ghost-float {
   from { transform: translateY(8px) rotate(-3deg); }
@@ -1237,9 +1205,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .song-content {
-    grid-template-columns: 1fr;
-  }
 
   .benefit-grid,
   .archive-process ol {

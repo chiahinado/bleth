@@ -146,12 +146,6 @@ const header = (prefix, liveHref) => `<header class="site-header is-scrolled" da
     </nav>
   </header>`;
 
-const footer = (prefix) => `<footer class="site-footer">
-    <a class="footer-logo" href="${prefix}">BLETHLAND</a>
-    <p>THE OFFICIAL ARCHIVE OF BLETH</p>
-    <p>HISTORICAL ARCHIVE · LAST UPDATED 2004.08.29</p>
-    <a href="#main">ページ上部へ戻る</a>
-  </footer>`;
 
 const years = [...new Set(events.map((event) => event.d.slice(0, 4)))];
 const timeline = years.map((year) => {
@@ -207,7 +201,6 @@ ${timeline}
       <a class="text-link" href="../">BLETHLANDへ戻る</a>
     </nav>
   </main>
-  ${footer("../")}
 </body>
 </html>`;
 
@@ -301,7 +294,6 @@ ${gallery}
       ${pager}
     </div>
   </main>
-  ${footer("../../")}
 </body>
 </html>`;
   await write(`live/${event.d}/index.html`, html);
@@ -431,7 +423,7 @@ const liveCss = `.live-hero {
 }
 
 .event-hero {
-  padding-block: 100px 70px;
+  padding-block: 64px 48px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -445,11 +437,11 @@ const liveCss = `.live-hero {
 }
 
 .event-hero h1 {
-  max-width: 1000px;
+  max-width: 820px;
   margin: 15px 0 0;
-  font-size: clamp(3rem, 8.5vw, 7.6rem);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
   overflow-wrap: anywhere;
 }
 

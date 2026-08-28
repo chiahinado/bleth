@@ -556,35 +556,6 @@ a {
   margin-top: auto;
 }
 
-.site-footer {
-  display: grid;
-  justify-items: center;
-  padding: 70px 24px;
-  color: var(--paper-muted);
-  border-top: 1px solid var(--line);
-  text-align: center;
-}
-
-.footer-logo {
-  color: var(--paper);
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.055em;
-  text-decoration: none;
-}
-
-.site-footer p {
-  margin: 12px 0 0;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.site-footer > a:last-child {
-  margin-top: 26px;
-  font-size: 0.8rem;
-}
 
 .page-hero {
   min-height: 42svh;

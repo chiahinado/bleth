@@ -36,12 +36,6 @@ const header = (prefix, current) => `<header class="site-header is-scrolled" dat
     </nav>
   </header>`;
 
-const footer = (prefix) => `<footer class="site-footer">
-    <a class="footer-logo" href="${prefix}">BLETHLAND</a>
-    <p>THE OFFICIAL ARCHIVE OF BLETH</p>
-    <p>HISTORICAL ARCHIVE · LAST UPDATED 2004.08.29</p>
-    <a href="#main">ページ上部へ戻る</a>
-  </footer>`;
 
 const page = ({ title, description, prefix, current, bodyClass, content, interactive = false }) => `<!doctype html>
 <html lang="ja">
@@ -63,7 +57,6 @@ const page = ({ title, description, prefix, current, bodyClass, content, interac
   <main id="main">
 ${content}
   </main>
-  ${footer(prefix)}
 </body>
 </html>`;
 
@@ -224,7 +217,6 @@ const musicIndex = page({
       <p class="section-kicker">BLETH SONG ARCHIVE</p>
       <h2 id="music-intro-title">楽曲をたどる</h2>
       <p class="section-lead">BLETHの楽曲を、クレジット、当時のコメントとともに紹介します。公開音源のある楽曲は各ページで再生できます。</p>
-      <p class="archive-policy"><strong>NOTICE</strong><br>歌詞は掲載していません。</p>
     </section>
     <section class="track-section section-shell" aria-labelledby="track-list-title">
       <div class="section-heading">
@@ -274,11 +266,6 @@ for (const [index, song] of songs.entries()) {
 ${song.note ? `            <div><dt>ARCHIVE NOTE</dt><dd>${escapeHtml(song.note)}</dd></div>\n` : ""}          </dl>
         </section>
 ${[audio, comment].filter(Boolean).map((block) => `        ${block}\n`).join("")}      </aside>
-      <section class="song-notice park-panel" aria-labelledby="lyrics-notice-title">
-        <p class="section-kicker">NOTICE</p>
-        <h2 id="lyrics-notice-title">歌詞について</h2>
-        <p>歌詞は掲載していません。</p>
-      </section>
     </div>
     <nav class="song-pager section-shell" aria-label="楽曲ページ">
       ${previous ? `<a href="../${previous.slug}/">前の楽曲<br>${escapeHtml(previous.title)}</a>` : "<span></span>"}
