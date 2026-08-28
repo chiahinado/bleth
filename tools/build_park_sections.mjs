@@ -31,10 +31,17 @@ const header = (prefix, current) => `<header class="site-header is-scrolled" dat
       <a href="${prefix}live/"${currentAttr(current, "live")}>LIVE</a>
       <a href="${prefix}members/"${currentAttr(current, "members")}>MEMBERS</a>
       <a href="${prefix}music/"${currentAttr(current, "music")}>MUSIC</a>
+      <a href="${prefix}shows/"${currentAttr(current, "shows")}>SHOWS</a>
       <a href="${prefix}extras/"${currentAttr(current, "extras")}>EXTRAS</a>
-      <a href="${prefix}haunted-house/"${currentAttr(current, "haunted")}>HAUNTED HOUSE</a>
     </nav>
   </header>`;
+
+const footer = (prefix) => `<footer class="site-footer">
+    <a class="footer-logo" href="${prefix}">BLETHLAND</a>
+    <p>THE OFFICIAL SITE OF BLETH</p>
+    <p>LAST UPDATED 2004.08.29</p>
+    <a href="#main">ページ上部へ戻る</a>
+  </footer>`;
 
 const page = ({ title, description, prefix, current, bodyClass, content, interactive = false }) => `<!doctype html>
 <html lang="ja">
@@ -56,6 +63,7 @@ const page = ({ title, description, prefix, current, bodyClass, content, interac
   <main id="main">
 ${content}
   </main>
+  ${footer(prefix)}
 </body>
 </html>`;
 
@@ -321,51 +329,60 @@ ${show.live ? `            <a href="../live/${show.live}/">写真を見る</a>\n
       </section>`;
 }).join("\n");
 
-const showsIndex = `<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=../live/">
-  <link rel="canonical" href="../live/">
-  <title>LIVEへ移動 | BLETHLAND</title>
-</head>
-<body>
-  <p>ライブ情報は<a href="../live/">LIVE</a>へ移動しました。</p>
-</body>
-</html>`;
+const showsIndex = page({
+  title: "SHOWS",
+  description: "BLETHLANDに掲載している2000年から2004年の公演情報を年代別に紹介します。",
+  prefix: "../",
+  current: "shows",
+  bodyClass: "shows-page",
+  content: `${hero({ number: "ATTRACTION 04", title: "SHOWS", caption: "公演情報" })}
+    <section class="park-intro section-shell" aria-labelledby="shows-intro-title">
+      <p class="section-kicker">LIVE INFORMATION</p>
+      <h2 id="shows-intro-title">公演情報</h2>
+      <p class="section-lead">BLETHLANDに掲載している公演情報を、年代別に紹介します。</p>
+    </section>
+    <div class="shows-archive section-shell">
+${showSections}
+      <p class="shows-note">1999年から2003年までのライブ写真と詳細は、<a class="text-link" href="../live/">LIVE</a>でご覧いただけます。</p>
+    </div>
+    <nav class="page-return section-shell" aria-label="ページ移動"><a class="text-link" href="../">BLETHLANDへ戻る</a></nav>`,
+});
 
 await write("shows/index.html", showsIndex);
 
 const extrasIndex = page({
   title: "EXTRAS",
-  description: "BLETHLANDの3つの特別アトラクションを紹介します。すべて現在閉鎖中です。",
+  description: "クイズ、おみくじなど、BLETHLANDならではの企画を楽しめるページです。",
   prefix: "../",
   current: "extras",
   bodyClass: "extras-page",
-  content: `${hero({ number: "ATTRACTION 04", title: "EXTRAS", caption: "お楽しみ" })}
+  content: `${hero({ number: "ATTRACTION 05", title: "EXTRAS", caption: "お楽しみ" })}
     <section class="park-intro section-shell" aria-labelledby="extras-intro-title">
       <p class="section-kicker">SPECIAL AREA</p>
       <h2 id="extras-intro-title">遊びと企画</h2>
-      <p class="section-lead">バイキングに集まった、BLETHLANDならではの3つの企画をご案内します。</p>
+      <p class="section-lead">クイズ、おみくじなど、BLETHLANDならではの企画をお楽しみください。</p>
     </section>
     <section class="extras-guide section-shell" aria-labelledby="extras-guide-title">
       <div class="section-heading"><p class="section-kicker">PARK SIDE</p><h2 id="extras-guide-title">EXTRA ATTRACTIONS</h2></div>
       <div class="extras-grid">
-        <article class="extra-card extra-card--quiz extra-card--closed">
-          <img class="extra-card-illustration" src="../assets/images/extras/bleth-quiz-attraction-v2.webp" width="1448" height="1086" loading="lazy" alt="大きなクエスチョンマークを掲げたクイズ館のアトラクション">
-          <div class="extra-card-copy"><p class="section-kicker">CHALLENGE</p><h3>BLETH QUIZ</h3><p class="card-caption">BLETHクイズ</p>
-          <span class="attraction-status">現在閉鎖中</span></div>
+        <article class="extra-card extra-card--haunted extra-card--closed">
+          <p class="section-kicker">NIGHT RIDE</p><h3>HAUNTED HOUSE</h3><p class="card-caption">お化け屋敷</p>
+          <span class="archive-status">現在閉鎖中</span>
         </article>
-        <article class="extra-card extra-card--fortune extra-card--closed">
-          <img class="extra-card-illustration" src="../assets/images/extras/fortune-attraction-v2.webp" width="1448" height="1086" loading="lazy" alt="月と星と運勢ルーレットを備えたおみくじ館のアトラクション">
-          <div class="extra-card-copy"><p class="section-kicker">TODAY'S TICKET</p><h3>BLETHLAND FORTUNE</h3><p class="card-caption">おみくじ</p>
-          <span class="attraction-status">現在閉鎖中</span></div>
+        <article class="extra-card extra-card--quiz">
+          <p class="section-kicker">CHALLENGE</p><h3>BLETH QUIZ</h3><p class="card-caption">BLETHクイズ</p>
+          <p>BLETHLANDの入園クイズ。全3問に挑戦できます。</p>
+          <a class="park-button" href="quiz/">クイズに挑戦する</a>
         </article>
-        <article class="extra-card extra-card--hold extra-card--closed">
-          <img class="extra-card-illustration" src="../assets/images/extras/special-exhibit-attraction-v2.webp" width="1448" height="1086" loading="lazy" alt="ギターとドラムを飾った音楽展示ステージのアトラクション">
-          <div class="extra-card-copy"><p class="section-kicker">SPECIAL</p><h3>SPECIAL EXHIBIT</h3><p class="card-caption">GLAYコピーバンド企画</p>
-          <span class="attraction-status">現在閉鎖中</span></div>
+        <article class="extra-card extra-card--fortune">
+          <p class="section-kicker">TODAY'S TICKET</p><h3>BLETHLAND FORTUNE</h3><p class="card-caption">おみくじ</p>
+          <p>個人情報の入力なしで、その日のBLETHLAND運勢を1枚引けます。</p>
+          <a class="park-button" href="fortune/">おみくじを引く</a>
+        </article>
+        <article class="extra-card extra-card--hold">
+          <p class="section-kicker">SPECIAL</p><h3>SPECIAL EXHIBIT</h3><p class="card-caption">GLAYコピーバンド企画</p>
+          <p>全国のGLAYコピーバンドを紹介する企画です。</p>
+          <span class="archive-status">準備中</span>
         </article>
       </div>
     </section>
@@ -374,24 +391,57 @@ const extrasIndex = page({
 
 await write("extras/index.html", extrasIndex);
 
-const hauntedHousePage = page({
-  title: "お化け屋敷",
-  description: "BLETHLANDのお化け屋敷は現在閉鎖中です。",
-  prefix: "../",
-  current: "haunted",
-  bodyClass: "haunted-page",
-  content: `${hero({ number: "ATTRACTION 05", title: "HAUNTED HOUSE", caption: "お化け屋敷" })}
-    <section class="haunted-closed section-shell" aria-labelledby="haunted-status-title">
-      <img src="../assets/images/home/haunted-house-v2.webp" width="1448" height="1086" alt="紫色のお化け屋敷と白いお化けのアトラクション">
-      <div class="haunted-closed-sign">
-        <p class="section-kicker">ATTRACTION NOTICE</p>
-        <h2 id="haunted-status-title">現在閉鎖中</h2>
-      </div>
+const quizPage = page({
+  title: "BLETH QUIZ | EXTRAS",
+  description: "BLETHLANDの入園クイズ。ブラウザ内で3問に挑戦できます。",
+  prefix: "../../",
+  current: "extras",
+  bodyClass: "quiz-page",
+  interactive: true,
+  content: `${hero({ number: "EXTRAS · CHALLENGE", title: "BLETH QUIZ", caption: "BLETHクイズ", compact: true })}
+    <section class="park-intro interactive-shell section-shell" aria-labelledby="quiz-intro-title">
+      <p class="section-kicker">ENTRANCE CHALLENGE</p><h2 id="quiz-intro-title">3問に挑戦</h2>
+      <p class="section-lead">BLETHLANDの入園クイズ、全3問に挑戦してください。</p>
+      <p class="archive-policy">回答内容と結果は保存・送信されません。</p>
     </section>
-    <nav class="page-return section-shell" aria-label="ページ移動"><a class="text-link" href="../">BLETHLANDへ戻る</a></nav>`,
+    <section class="interactive-section interactive-shell section-shell">
+      <form class="quiz-form park-panel" data-quiz>
+        <fieldset class="quiz-question"><legend>Q1. BLETHのメンバーの国籍は？</legend><div class="answer-list"><label><input type="radio" name="nationality" value="japan">日本</label><label><input type="radio" name="nationality" value="uk">イギリス</label></div></fieldset>
+        <fieldset class="quiz-question"><legend>Q2. BLETHの楽曲は？</legend><div class="answer-list"><label><input type="radio" name="song" value="pure-soul">pure soul</label><label><input type="radio" name="song" value="first-memory">first memory</label></div></fieldset>
+        <fieldset class="quiz-question"><legend>Q3. BLETHがコピーしているアーティストは？</legend><div class="answer-list"><label><input type="radio" name="copy" value="ccb">C-C-B</label><label><input type="radio" name="copy" value="glay">GLAY</label></div></fieldset>
+        <button class="park-button" type="submit">結果を見る</button>
+      </form>
+      <div class="interactive-result" data-quiz-result role="status" tabindex="-1" hidden></div>
+    </section>
+    <nav class="page-return section-shell" aria-label="ページ移動"><a class="text-link" href="../">EXTRASへ戻る</a></nav>`,
 });
 
-await write("haunted-house/index.html", hauntedHousePage);
+await write("extras/quiz/index.html", quizPage);
+
+const fortunePage = page({
+  title: "BLETHLAND FORTUNE | EXTRAS",
+  description: "個人情報を入力せず、ブラウザ内だけで楽しめるBLETHLANDのおみくじです。",
+  prefix: "../../",
+  current: "extras",
+  bodyClass: "fortune-page",
+  interactive: true,
+  content: `${hero({ number: "EXTRAS · TODAY'S TICKET", title: "BLETHLAND FORTUNE", caption: "おみくじ", compact: true })}
+    <section class="park-intro interactive-shell section-shell" aria-labelledby="fortune-intro-title">
+      <p class="section-kicker">ONE DAY TICKET</p><h2 id="fortune-intro-title">今日の一枚</h2>
+      <p class="section-lead">ボタンを押すと、BLETHLANDから今日の運勢チケットが届きます。</p>
+      <p class="archive-policy">生年月日などの入力は不要です。抽選結果は保存・送信されません。</p>
+    </section>
+    <section class="interactive-section interactive-shell section-shell">
+      <div class="fortune-machine">
+        <span class="fortune-sign">BLETHLAND FORTUNE</span><br>
+        <button class="park-button" type="button" data-fortune-button>おみくじを引く</button>
+        <div class="fortune-ticket" data-fortune-result role="status" tabindex="-1" hidden></div>
+      </div>
+    </section>
+    <nav class="page-return section-shell" aria-label="ページ移動"><a class="text-link" href="../">EXTRASへ戻る</a></nav>`,
+});
+
+await write("extras/fortune/index.html", fortunePage);
 
 const fanclubPage = page({
   title: "I LOVE BLETH",
@@ -496,4 +546,4 @@ const notFoundPage = page({
 
 await write("404.html", notFoundPage);
 
-console.log(`Park sections generated: ${songs.length + 7} pages`);
+console.log(`Park sections generated: ${songs.length + 9} pages`);
