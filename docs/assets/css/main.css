@@ -616,87 +616,26 @@ a {
 
 .member-grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 18px;
   margin-top: 52px;
 }
 
 .member-card {
-  min-height: 310px;
+  min-height: 160px;
   display: flex;
   flex-direction: column;
-  grid-column: span 2;
+  align-items: center;
+  justify-content: center;
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 26px;
   background: linear-gradient(160deg, rgba(111, 230, 197, 0.12), rgba(255, 255, 255, 0.03));
-}
-
-.member-photo {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: min(100%, 190px);
-  aspect-ratio: 3 / 4;
-  margin: 0 auto;
-  padding: 7px;
-  overflow: hidden;
-  background: #fffaf0;
-  border-radius: 22px;
-  isolation: isolate;
-}
-
-.member-photo::after {
-  position: absolute;
-  inset: 7px;
-  z-index: 2;
-  content: "";
-  background: linear-gradient(180deg, rgba(255, 247, 195, 0.05), rgba(57, 127, 34, 0.12));
-  border: 2px solid rgba(255, 255, 255, 0.68);
-  border-radius: 14px;
-  box-shadow: inset 0 0 22px rgba(23, 50, 77, 0.12);
-  mix-blend-mode: soft-light;
-  pointer-events: none;
-}
-
-.member-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 14px;
-  filter: grayscale(0.08) saturate(0.76) contrast(1.06) brightness(1.06) sepia(0.04);
-  transform: scale(1.08);
-  transform-origin: 50% 32%;
-}
-
-#daigo .member-photo img {
-  filter: grayscale(0.08) saturate(0.72) contrast(1.04) brightness(1.18) sepia(0.05);
-  transform: scale(1.1);
-  transform-origin: 50% 29%;
-}
-
-#masaho .member-photo img {
-  filter: grayscale(0.08) saturate(0.72) contrast(1.06) brightness(1.06) sepia(0.05);
-  transform: scale(1.1);
-  transform-origin: 50% 30%;
-}
-
-#tatsuya .member-photo img {
-  filter: grayscale(0.16) saturate(0.56) contrast(1.05) brightness(1.08) sepia(0.05);
-  transform: scale(1.08);
-  transform-origin: 50% 38%;
-}
-
-#makiko .member-photo img {
-  filter: grayscale(0.08) saturate(0.72) contrast(1.05) brightness(1.04) sepia(0.05);
-  transform: scale(1.78);
-  transform-origin: 50% 15%;
+  text-align: center;
 }
 
 .member-part {
-  margin: 18px 0 0;
+  margin: 0;
   color: var(--mint);
   font-size: 0.64rem;
   font-weight: 900;
@@ -704,15 +643,9 @@ a {
 }
 
 .member-card h3 {
-  margin: 4px 0 0;
+  margin: 8px 0 0;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   letter-spacing: -0.045em;
-}
-
-.privacy-note {
-  margin: 36px 0 0;
-  color: var(--paper-muted);
-  font-size: 0.82rem;
 }
 
 .members-section > .text-link {
@@ -755,9 +688,6 @@ a {
     grid-column: span 6;
   }
 
-  .member-card {
-    grid-column: span 5;
-  }
 }
 
 @media (max-width: 620px) {

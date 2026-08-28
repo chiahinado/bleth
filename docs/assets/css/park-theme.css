@@ -138,20 +138,8 @@
   box-shadow: 0 8px 0 #b9dd9e;
 }
 
-.members-page .member-photo {
-  margin-bottom: 14px;
-  background: #fff8df;
-  border: 3px solid #93cb6b;
-  border-radius: 22px;
-  box-shadow: 0 5px 0 #d8eebf;
-}
-
 .members-page .member-part {
   color: #327c1e;
-}
-
-.members-page .privacy-note {
-  color: var(--park-copy);
 }
 
 .live-page .archive-count,
