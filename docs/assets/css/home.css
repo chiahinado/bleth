@@ -75,22 +75,45 @@
 }
 
 .hotspot {
+  --hotspot-shape: inset(4% round 28px);
+  --hotspot-color: #17324d;
+  --hotspot-glow: rgba(255, 255, 255, 0.95);
   position: absolute;
   display: block;
   border: 0;
-  border-radius: 28px;
   outline: 0;
-  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  isolation: isolate;
 }
 
-.hotspot:hover,
-.hotspot:focus-visible {
+.hotspot::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.16) 52%, rgba(255, 255, 255, 0.04) 72%);
+  opacity: 0;
+  clip-path: var(--hotspot-shape);
+  -webkit-backdrop-filter: brightness(1.22) saturate(1.12);
+  backdrop-filter: brightness(1.22) saturate(1.12);
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 18px var(--hotspot-glow));
+  transform: scale(0.96);
+  transform-origin: center;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.hotspot:hover::before,
+.hotspot:focus-visible::before {
+  opacity: 0.28;
+  transform: scale(1);
+  animation: attraction-flash 720ms ease-out both;
+}
+
+.hotspot:hover span,
+.hotspot:focus-visible span {
   z-index: 4;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow:
-    inset 0 0 0 5px rgba(255, 255, 255, 0.95),
-    0 10px 30px rgba(10, 54, 91, 0.24);
-  transform: scale(1.015);
 }
 
 .hotspot span {
@@ -99,7 +122,7 @@
   bottom: 10px;
   padding: 7px 11px;
   color: #fff;
-  background: #17324d;
+  background: var(--hotspot-color);
   border: 2px solid #fff;
   border-radius: 999px;
   font-size: clamp(0.58rem, 1.1vw, 0.8rem);
@@ -118,6 +141,9 @@
 }
 
 .hotspot-live {
+  --hotspot-shape: polygon(4% 37%, 13% 14%, 34% 2%, 69% 0, 93% 17%, 100% 48%, 94% 79%, 72% 96%, 38% 100%, 12% 89%, 0 65%);
+  --hotspot-color: #1269b2;
+  --hotspot-glow: rgba(53, 173, 255, 0.92);
   top: 19%;
   left: 3%;
   width: 32%;
@@ -125,6 +151,9 @@
 }
 
 .hotspot-members {
+  --hotspot-shape: polygon(50% 0, 69% 7%, 85% 23%, 96% 45%, 100% 68%, 89% 87%, 67% 98%, 37% 100%, 15% 88%, 2% 67%, 6% 39%, 20% 17%);
+  --hotspot-color: #438e2d;
+  --hotspot-glow: rgba(117, 211, 85, 0.9);
   top: 20%;
   left: 34%;
   width: 33%;
@@ -132,6 +161,9 @@
 }
 
 .hotspot-music {
+  --hotspot-shape: ellipse(49% 48% at 51% 50%);
+  --hotspot-color: #e63e73;
+  --hotspot-glow: rgba(255, 84, 143, 0.9);
   top: 19%;
   right: 2%;
   width: 31%;
@@ -139,6 +171,9 @@
 }
 
 .hotspot-shows {
+  --hotspot-shape: polygon(2% 52%, 14% 25%, 35% 4%, 65% 7%, 94% 35%, 100% 66%, 86% 91%, 53% 100%, 20% 93%, 0 73%);
+  --hotspot-color: #bd5a00;
+  --hotspot-glow: rgba(255, 151, 43, 0.92);
   bottom: 10%;
   left: 1%;
   width: 35%;
@@ -146,6 +181,9 @@
 }
 
 .hotspot-extras {
+  --hotspot-shape: polygon(27% 2%, 68% 0, 94% 18%, 100% 55%, 92% 82%, 72% 98%, 31% 100%, 7% 86%, 0 56%, 9% 28%);
+  --hotspot-color: #397f22;
+  --hotspot-glow: rgba(103, 211, 73, 0.9);
   right: 1%;
   bottom: 9%;
   width: 34%;
@@ -153,6 +191,9 @@
 }
 
 .hotspot-fanclub {
+  --hotspot-shape: inset(19% 2% 5% round 42%);
+  --hotspot-color: #d83b65;
+  --hotspot-glow: rgba(255, 82, 130, 0.9);
   bottom: 2%;
   left: 34%;
   width: 17%;
@@ -160,10 +201,35 @@
 }
 
 .hotspot-links {
+  --hotspot-shape: inset(19% 2% 5% round 42%);
+  --hotspot-color: #1269b2;
+  --hotspot-glow: rgba(53, 173, 255, 0.92);
   right: 34%;
   bottom: 2%;
   width: 16%;
   height: 24%;
+}
+
+@keyframes attraction-flash {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  38% {
+    opacity: 0.62;
+    transform: scale(1.018);
+  }
+
+  72% {
+    opacity: 0.16;
+    transform: scale(0.995);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
 }
 
 .map-expand {
@@ -281,5 +347,12 @@
 
   .home-page .welcome {
     margin-top: 54px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hotspot:hover::before,
+  .hotspot:focus-visible::before {
+    animation: none;
   }
 }

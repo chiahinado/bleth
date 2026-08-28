@@ -140,9 +140,10 @@
 
 .members-page .member-photo {
   margin-bottom: 14px;
-  background: #ecf8e4;
+  background: #fff8df;
   border: 3px solid #93cb6b;
   border-radius: 22px;
+  box-shadow: 0 5px 0 #d8eebf;
 }
 
 .members-page .member-part {
