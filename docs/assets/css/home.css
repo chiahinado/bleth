@@ -1,0 +1,296 @@
+.home-page {
+  color: #17324d;
+  background:
+    radial-gradient(circle at 50% 0, rgba(93, 205, 255, 0.2), transparent 34rem),
+    #fff8df;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+}
+
+.home-page .site-header {
+  color: #17324d;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 4px solid #1f7fc7;
+  backdrop-filter: blur(16px);
+}
+
+.home-page .site-logo span,
+.home-page .global-menu a {
+  color: #17324d;
+}
+
+.home-page .site-logo small {
+  color: #506b84;
+}
+
+.home-page .global-menu a::after {
+  background: #ff4f79;
+}
+
+.home-page .menu-button {
+  color: #17324d;
+  border: 2px solid #17324d;
+}
+
+.park-map-hero {
+  margin-top: var(--header-height);
+  padding-bottom: 0;
+  background: #dff5ff;
+  border-bottom: 10px solid #1269b2;
+}
+
+.park-map-canvas {
+  position: relative;
+  width: min(100%, 1536px);
+  margin-inline: auto;
+  overflow: hidden;
+  background: #c9f0ff;
+  border-inline: 2px solid rgba(23, 50, 77, 0.2);
+}
+
+.park-map-canvas picture,
+.park-map-canvas img {
+  display: block;
+  width: 100%;
+}
+
+.park-map-canvas img {
+  height: auto;
+}
+
+.park-hotspots {
+  position: absolute;
+  inset: 0;
+}
+
+.hotspot {
+  position: absolute;
+  display: block;
+  border: 0;
+  border-radius: 28px;
+  outline: 0;
+  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+  z-index: 4;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 0 0 5px rgba(255, 255, 255, 0.95),
+    0 10px 30px rgba(10, 54, 91, 0.24);
+  transform: scale(1.015);
+}
+
+.hotspot span {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  padding: 7px 11px;
+  color: #fff;
+  background: #17324d;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  font-size: clamp(0.58rem, 1.1vw, 0.8rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.hotspot:hover span,
+.hotspot:focus-visible span {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.hotspot-live {
+  top: 19%;
+  left: 3%;
+  width: 32%;
+  height: 38%;
+}
+
+.hotspot-members {
+  top: 20%;
+  left: 34%;
+  width: 33%;
+  height: 52%;
+}
+
+.hotspot-music {
+  top: 19%;
+  right: 2%;
+  width: 31%;
+  height: 39%;
+}
+
+.hotspot-shows {
+  bottom: 10%;
+  left: 1%;
+  width: 35%;
+  height: 37%;
+}
+
+.hotspot-extras {
+  right: 1%;
+  bottom: 9%;
+  width: 34%;
+  height: 40%;
+}
+
+.hotspot-fanclub {
+  bottom: 2%;
+  left: 34%;
+  width: 17%;
+  height: 24%;
+}
+
+.hotspot-links {
+  right: 34%;
+  bottom: 2%;
+  width: 16%;
+  height: 24%;
+}
+
+.map-expand {
+  display: none;
+}
+
+.home-page .welcome {
+  width: min(calc(100% - 40px), 920px);
+  margin-top: 78px;
+  margin-bottom: 42px;
+  padding: clamp(34px, 6vw, 64px);
+  background: #fff;
+  border: 4px solid #1f7fc7;
+  border-radius: 36px;
+  box-shadow: 0 10px 0 #a9dff3;
+}
+
+.home-page .section-kicker {
+  color: #146db4;
+}
+
+.home-page .welcome h2,
+.home-page .section-heading h2,
+.home-page .side-gates h2 {
+  color: #17324d;
+}
+
+.home-page .section-lead {
+  color: #445f77;
+}
+
+.home-page .attractions {
+  padding-top: 58px;
+}
+
+.home-page .attraction-card {
+  color: #17324d;
+  background: #fff;
+  border: 4px solid var(--card-color);
+  box-shadow: 0 9px 0 color-mix(in srgb, var(--card-color) 45%, #fff);
+}
+
+.home-page .attraction-card::after {
+  opacity: 0.09;
+}
+
+.home-page .attraction-card > p:not(.attraction-number, .card-caption) {
+  color: #445f77;
+}
+
+.home-page .card-status {
+  color: #647b90;
+}
+
+.home-page .side-gates article {
+  color: #17324d;
+  background: #fff;
+  border-width: 4px;
+  box-shadow: 0 9px 0 rgba(23, 50, 77, 0.12);
+}
+
+.home-page .side-gates article:first-child {
+  border-color: #ff6b8a;
+}
+
+.home-page .side-gates article:last-child {
+  border-color: #54b8ef;
+}
+
+.home-page .side-gates p:not(.section-kicker, .card-caption) {
+  color: #445f77;
+}
+
+.home-page .archive-note {
+  color: #17324d;
+  background: #fffdf4;
+  border: 4px solid #ffd35a;
+  box-shadow: 0 9px 0 #f5d989;
+}
+
+.home-page .archive-note p:last-child {
+  color: #445f77;
+}
+
+.home-page .site-footer {
+  color: #d8edff;
+  background: #1269b2;
+  border-top: 10px solid #0d4f91;
+}
+
+.home-page .footer-logo {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .home-page .global-menu {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 4px solid #1f7fc7;
+  }
+}
+
+@media (max-width: 680px) {
+  .park-hotspots {
+    display: none;
+  }
+
+  .park-map-hero {
+    border-bottom-width: 6px;
+  }
+
+  .map-expand {
+    display: flex;
+    justify-content: center;
+    width: min(calc(100% - 36px), 360px);
+    margin: 16px auto;
+    padding: 11px 16px;
+    color: #fff;
+    background: #1269b2;
+    border: 3px solid #fff;
+    border-radius: 999px;
+    box-shadow: 0 4px 0 #0b4b82;
+    font-size: 0.82rem;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .home-page .welcome {
+    margin-top: 54px;
+  }
+}

@@ -1,0 +1,303 @@
+:root {
+  --park-ink: #17324d;
+  --park-copy: #49657c;
+  --park-cream: #fff8df;
+  --park-white: #fff;
+  --park-blue: #1979c8;
+  --park-blue-dark: #0e5595;
+  --park-green: #5cad36;
+}
+
+.members-page,
+.live-page,
+.live-detail-page {
+  color: var(--park-ink);
+  background:
+    radial-gradient(circle at 50% 0, rgba(93, 205, 255, 0.2), transparent 34rem),
+    var(--park-cream);
+}
+
+.members-page .site-header,
+.live-page .site-header,
+.live-detail-page .site-header {
+  color: var(--park-ink);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 4px solid var(--park-blue);
+  backdrop-filter: blur(16px);
+}
+
+.members-page .site-logo span,
+.members-page .global-menu a,
+.live-page .site-logo span,
+.live-page .global-menu a,
+.live-detail-page .site-logo span,
+.live-detail-page .global-menu a {
+  color: var(--park-ink);
+}
+
+.members-page .site-logo small,
+.live-page .site-logo small,
+.live-detail-page .site-logo small {
+  color: #567087;
+}
+
+.members-page .menu-button,
+.live-page .menu-button,
+.live-detail-page .menu-button {
+  color: var(--park-ink);
+  border: 2px solid var(--park-ink);
+}
+
+.members-page .global-menu a::after {
+  background: var(--park-green);
+}
+
+.live-page .global-menu a::after,
+.live-detail-page .global-menu a::after {
+  background: var(--park-blue);
+}
+
+.members-page .page-hero,
+.live-page .page-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 62svh;
+  overflow: hidden;
+  color: var(--park-ink);
+  border-bottom: 10px solid var(--park-blue);
+}
+
+.members-page .page-hero::before,
+.live-page .page-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0 32%, rgba(255, 255, 255, 0.72) 48%, rgba(255, 255, 255, 0.08) 80%),
+    url("../images/common/blethland-park-map-v1.webp");
+  background-repeat: no-repeat;
+}
+
+.members-page .members-hero::before {
+  background-size: auto, 145%;
+  background-position: center, 48% 45%;
+}
+
+.live-page .live-hero::before {
+  background-size: auto, 145%;
+  background-position: center, 3% 42%;
+}
+
+.members-page .page-hero h1,
+.live-page .page-hero h1 {
+  max-width: 900px;
+  color: var(--park-ink);
+  text-shadow:
+    0 3px 0 #fff,
+    0 6px 0 rgba(23, 50, 77, 0.14);
+}
+
+.members-page .page-hero > p:last-child {
+  color: #327c1e;
+}
+
+.live-page .page-hero > p:last-child {
+  color: var(--park-blue-dark);
+}
+
+.members-page .members-section,
+.live-page .live-intro,
+.live-page .timeline,
+.live-detail-page .breadcrumb,
+.live-detail-page .event-hero,
+.live-detail-page .event-content {
+  color: var(--park-ink);
+}
+
+.members-page .members-section h2,
+.live-page .live-intro h2,
+.live-detail-page .event-hero h1,
+.live-detail-page .event-panel h2,
+.live-detail-page .event-gallery h2 {
+  color: var(--park-ink);
+}
+
+.members-page .section-lead,
+.live-page .section-lead,
+.live-detail-page .event-venue,
+.live-detail-page .event-panel > p:last-child,
+.live-detail-page .image-note {
+  color: var(--park-copy);
+}
+
+.members-page .member-card {
+  color: var(--park-ink);
+  background: var(--park-white);
+  border: 4px solid var(--park-green);
+  box-shadow: 0 8px 0 #b9dd9e;
+}
+
+.members-page .member-mark {
+  margin-bottom: 14px;
+  background: #ecf8e4;
+  border: 3px solid #93cb6b;
+  border-radius: 22px;
+}
+
+.members-page .member-part {
+  color: #327c1e;
+}
+
+.members-page .privacy-note {
+  color: var(--park-copy);
+}
+
+.live-page .archive-count,
+.live-page .timeline-year > h2,
+.live-detail-page .event-hero time,
+.live-detail-page .event-info dt,
+.live-detail-page .event-pager > a > span {
+  color: var(--park-blue);
+}
+
+.live-page .timeline-year {
+  border-top: 4px solid #91cbee;
+}
+
+.live-page .timeline-item {
+  margin-bottom: 10px;
+  padding-inline: 20px;
+  background: #fff;
+  border: 2px solid #b8dff4;
+  border-radius: 18px;
+  box-shadow: 0 4px 0 #d3eaf6;
+}
+
+.live-page .timeline-item:first-child {
+  border-top: 2px solid #b8dff4;
+}
+
+.live-page .timeline-item time,
+.live-page .timeline-item > span,
+.live-page .timeline-item p {
+  color: var(--park-copy);
+}
+
+.live-page .timeline-item > a {
+  color: #fff;
+  background: var(--park-blue);
+  border: 2px solid var(--park-blue-dark);
+  box-shadow: 0 3px 0 var(--park-blue-dark);
+}
+
+.live-detail-page .breadcrumb {
+  color: var(--park-copy);
+}
+
+.live-detail-page .event-hero {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin-top: calc(var(--header-height) + 38px);
+  padding: clamp(34px, 7vw, 80px);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.68)),
+    url("../images/common/blethland-park-map-v1.webp");
+  background-size: auto, 145%;
+  background-position: center, 4% 43%;
+  border: 4px solid var(--park-blue);
+  border-radius: 34px;
+  box-shadow: 0 10px 0 #a8d7ef;
+}
+
+.live-detail-page .breadcrumb + .event-hero {
+  margin-top: 34px;
+}
+
+.live-detail-page .event-panel,
+.live-detail-page .event-gallery {
+  color: var(--park-ink);
+  background: #fff;
+  border: 4px solid #8bc9ed;
+  box-shadow: 0 8px 0 #c4e3f4;
+}
+
+.live-detail-page .event-info dl div {
+  border-bottom-color: #c9dfec;
+}
+
+.live-detail-page .performer-list li {
+  color: var(--park-ink);
+  background: #eff9ff;
+  border-color: #a9d7f0;
+}
+
+.live-detail-page .gallery-grid figure {
+  background: #eff9ff;
+  border: 3px solid #a8d7ef;
+}
+
+.live-detail-page .gallery-grid figcaption {
+  color: var(--park-copy);
+}
+
+.live-detail-page .event-pager > a {
+  color: var(--park-ink);
+}
+
+.live-detail-page .event-pager .archive-return {
+  color: #fff;
+  background: var(--park-blue);
+  border: 2px solid var(--park-blue-dark);
+  box-shadow: 0 4px 0 var(--park-blue-dark);
+}
+
+.members-page .site-footer,
+.live-page .site-footer,
+.live-detail-page .site-footer {
+  color: #d8edff;
+  background: #1269b2;
+  border-top: 10px solid #0d4f91;
+}
+
+.members-page .footer-logo,
+.live-page .footer-logo,
+.live-detail-page .footer-logo {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .members-page .global-menu,
+  .live-page .global-menu,
+  .live-detail-page .global-menu {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 4px solid var(--park-blue);
+  }
+}
+
+@media (max-width: 620px) {
+  .members-page .page-hero,
+  .live-page .page-hero {
+    min-height: 52svh;
+  }
+
+  .members-page .page-hero::before,
+  .live-page .page-hero::before {
+    background-image:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.94)),
+      url("../images/common/blethland-park-map-v1.webp");
+    background-size: auto, 230%;
+  }
+
+  .members-page .members-hero::before {
+    background-position: center, 50% 43%;
+  }
+
+  .live-page .live-hero::before {
+    background-position: center, 4% 43%;
+  }
+
+  .live-detail-page .event-hero {
+    padding: 28px 24px;
+    background-size: auto, 230%;
+  }
+}

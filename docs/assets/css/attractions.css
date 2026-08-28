@@ -1,0 +1,1382 @@
+:root {
+  --park-ink: #17324d;
+  --park-copy: #49657c;
+  --park-cream: #fff8df;
+  --park-white: #fff;
+  --park-blue: #1979c8;
+  --park-blue-dark: #0e5595;
+}
+
+.music-page {
+  --section-color: #ee4e8a;
+  --section-dark: #b82562;
+  --section-soft: #fff0f6;
+  --section-shadow: #f6b5ce;
+  --hero-x: 95%;
+  --hero-y: 32%;
+}
+
+.shows-page {
+  --section-color: #e87817;
+  --section-dark: #a64a08;
+  --section-soft: #fff3dc;
+  --section-shadow: #f2c894;
+  --hero-x: 4%;
+  --hero-y: 76%;
+}
+
+.extras-page,
+.quiz-page,
+.fortune-page,
+.haunted-page {
+  --section-color: #69a832;
+  --section-dark: #3b701d;
+  --section-soft: #eef8e6;
+  --section-shadow: #b9d99d;
+  --hero-x: 96%;
+  --hero-y: 74%;
+}
+
+.quiz-page {
+  --section-color: #7c4fbd;
+  --section-dark: #4c297f;
+  --section-soft: #f3edff;
+  --section-shadow: #cbb7ea;
+}
+
+.fortune-page {
+  --section-color: #ed5878;
+  --section-dark: #a92e4e;
+  --section-soft: #fff0f3;
+  --section-shadow: #f3b6c3;
+}
+
+.haunted-page {
+  --section-color: #6b3ca6;
+  --section-dark: #38205f;
+  --section-soft: #f0eaff;
+  --section-shadow: #c5b4e0;
+}
+
+.fanclub-page {
+  --section-color: #ef5f82;
+  --section-dark: #ad284f;
+  --section-soft: #fff0f4;
+  --section-shadow: #f2b3c3;
+  --hero-x: 41%;
+  --hero-y: 88%;
+}
+
+.links-page {
+  --section-color: #3faee5;
+  --section-dark: #126ca5;
+  --section-soft: #edf9ff;
+  --section-shadow: #aadcf2;
+  --hero-x: 58%;
+  --hero-y: 88%;
+}
+
+.not-found-page {
+  --section-color: #f0b82f;
+  --section-dark: #a66b0a;
+  --section-soft: #fff8da;
+  --section-shadow: #ecd38a;
+  --hero-x: 50%;
+  --hero-y: 54%;
+}
+
+.park-attraction-page {
+  color: var(--park-ink);
+  background:
+    radial-gradient(circle at 50% 0, rgba(93, 205, 255, 0.2), transparent 34rem),
+    var(--park-cream);
+}
+
+.park-attraction-page .site-header {
+  color: var(--park-ink);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 4px solid var(--section-color);
+  backdrop-filter: blur(16px);
+}
+
+.park-attraction-page .site-logo span,
+.park-attraction-page .global-menu a {
+  color: var(--park-ink);
+}
+
+.park-attraction-page .site-logo small {
+  color: #567087;
+}
+
+.park-attraction-page .menu-button {
+  color: var(--park-ink);
+  border: 2px solid var(--park-ink);
+}
+
+.park-attraction-page .global-menu a::after {
+  background: var(--section-color);
+}
+
+.attraction-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 62svh;
+  overflow: hidden;
+  color: var(--park-ink);
+  border-bottom: 10px solid var(--section-color);
+}
+
+.attraction-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0 31%, rgba(255, 255, 255, 0.74) 48%, rgba(255, 255, 255, 0.08) 82%),
+    url("../images/common/blethland-park-map-v1.webp");
+  background-repeat: no-repeat;
+  background-size: auto, 150%;
+  background-position: center, var(--hero-x) var(--hero-y);
+}
+
+.attraction-hero h1 {
+  max-width: 950px;
+  color: var(--park-ink);
+  text-shadow: 0 3px 0 #fff, 0 6px 0 rgba(23, 50, 77, 0.14);
+}
+
+.attraction-hero > p:last-child {
+  color: var(--section-dark);
+}
+
+.attraction-hero--compact {
+  min-height: 48svh;
+}
+
+.park-intro {
+  padding-block: 92px 48px;
+}
+
+.park-intro .section-kicker,
+.park-attraction-page .section-kicker {
+  color: var(--section-dark);
+}
+
+.park-intro h2,
+.park-attraction-page .section-heading h2,
+.park-panel h2,
+.park-panel h3 {
+  color: var(--park-ink);
+}
+
+.park-intro .section-lead,
+.park-panel > p,
+.track-card > p,
+.show-card p,
+.extra-card p {
+  color: var(--park-copy);
+}
+
+.park-panel {
+  color: var(--park-ink);
+  background: var(--park-white);
+  border: 4px solid var(--section-color);
+  border-radius: 32px;
+  box-shadow: 0 9px 0 var(--section-shadow);
+}
+
+.archive-policy {
+  margin-top: 28px;
+  padding: 24px 28px;
+  background: var(--section-soft);
+  border: 2px solid var(--section-color);
+  border-radius: 22px;
+  color: var(--park-copy);
+}
+
+.archive-policy strong {
+  color: var(--section-dark);
+}
+
+.track-section,
+.shows-archive,
+.extras-guide,
+.interactive-section {
+  padding-block: 46px 110px;
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 42px;
+}
+
+.track-card {
+  position: relative;
+  min-height: 270px;
+  padding: 28px;
+  overflow: hidden;
+  background: #fff;
+  border: 4px solid var(--section-color);
+  border-radius: 28px;
+  box-shadow: 0 8px 0 var(--section-shadow);
+}
+
+.track-card::after {
+  position: absolute;
+  right: -22px;
+  bottom: -36px;
+  width: 130px;
+  height: 130px;
+  content: "";
+  background: var(--section-soft);
+  border: 18px solid var(--section-color);
+  border-radius: 50%;
+  opacity: 0.18;
+}
+
+.track-number {
+  margin: 0 0 24px;
+  color: var(--section-dark) !important;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.track-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  line-height: 1;
+}
+
+.track-card .park-button {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+}
+
+.track-credit {
+  position: relative;
+  z-index: 1;
+  margin-top: 22px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+}
+
+.track-badge,
+.archive-status {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  margin-top: 20px;
+  padding: 8px 12px;
+  color: var(--section-dark);
+  background: var(--section-soft);
+  border: 2px solid var(--section-color);
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.song-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: 30px;
+  padding-block: 70px 105px;
+}
+
+.song-sidebar {
+  display: grid;
+  align-content: start;
+  gap: 26px;
+}
+
+.song-meta,
+.song-comment,
+.lyrics-panel {
+  padding: clamp(26px, 4vw, 42px);
+}
+
+.song-meta dl {
+  display: grid;
+  gap: 18px;
+  margin: 24px 0 0;
+}
+
+.song-meta dl div {
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--section-shadow);
+}
+
+.song-meta dt {
+  color: var(--section-dark);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.song-meta dd {
+  margin: 7px 0 0;
+  color: var(--park-ink);
+  font-weight: 800;
+}
+
+.song-player {
+  width: 100%;
+  margin-top: 22px;
+  accent-color: var(--section-color);
+}
+
+.song-comment blockquote {
+  margin: 22px 0 0;
+  color: var(--park-copy);
+  font-size: 0.95rem;
+  line-height: 1.95;
+}
+
+.lyrics-panel {
+  min-width: 0;
+}
+
+.lyrics-text {
+  display: grid;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.lyrics-text p {
+  margin: 0;
+  color: #294760;
+  font-size: clamp(0.94rem, 1.6vw, 1.05rem);
+  line-height: 2.15;
+}
+
+.song-pager {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding-bottom: 90px;
+}
+
+.song-pager a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 14px 18px;
+  color: var(--park-ink);
+  background: #fff;
+  border: 3px solid var(--section-color);
+  border-radius: 18px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+}
+
+.song-pager .song-pager-home {
+  color: #fff;
+  background: var(--section-color);
+  border-color: var(--section-dark);
+}
+
+.show-year {
+  margin-top: 42px;
+  padding: 30px;
+}
+
+.show-year-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--section-shadow);
+}
+
+.show-year-heading h2 {
+  margin: 0;
+  color: var(--section-dark);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.9;
+}
+
+.show-year-heading p {
+  margin: 0;
+  color: var(--park-copy);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.show-list {
+  display: grid;
+  gap: 14px;
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.show-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  padding: 22px;
+  background: var(--section-soft);
+  border: 2px solid var(--section-shadow);
+  border-radius: 20px;
+}
+
+.show-card time {
+  color: var(--section-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.show-card h3 {
+  margin: 0;
+  font-size: 1.18rem;
+}
+
+.show-card p {
+  margin: 7px 0 0;
+  font-size: 0.86rem;
+}
+
+.show-card a,
+.park-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 11px 18px;
+  color: #fff;
+  background: var(--section-color);
+  border: 2px solid var(--section-dark);
+  border-radius: 999px;
+  box-shadow: 0 4px 0 var(--section-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.show-card a:hover,
+.show-card a:focus-visible,
+.park-button:hover,
+.park-button:focus-visible {
+  box-shadow: 0 2px 0 var(--section-dark);
+  transform: translateY(2px);
+}
+
+.shows-note {
+  margin-top: 44px;
+  padding: 28px;
+  background: #fffdf4;
+  border: 4px solid #ffd35a;
+  border-radius: 24px;
+  box-shadow: 0 7px 0 #efd47e;
+  color: var(--park-copy);
+}
+
+.extras-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 42px;
+}
+
+.extra-card {
+  min-height: 320px;
+  padding: 34px;
+  background: #fff;
+  border: 4px solid var(--card-color, var(--section-color));
+  border-radius: 32px;
+  box-shadow: 0 9px 0 var(--card-shadow, var(--section-shadow));
+}
+
+.extra-card h3 {
+  margin: 20px 0 0;
+  color: var(--park-ink);
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 0.95;
+}
+
+.extra-card .card-caption {
+  color: var(--card-color, var(--section-dark));
+}
+
+.extra-card p:not(.card-caption, .section-kicker) {
+  min-height: 3.4em;
+}
+
+.extra-card--quiz {
+  --card-color: #7c4fbd;
+  --card-shadow: #cbb7ea;
+}
+
+.extra-card--fortune {
+  --card-color: #ed5878;
+  --card-shadow: #f3b6c3;
+}
+
+.extra-card--haunted {
+  --card-color: #4f7e25;
+  --card-shadow: #b9d99d;
+}
+
+.extra-card--hold {
+  --card-color: #6695b7;
+  --card-shadow: #bed5e5;
+}
+
+.extra-card .park-button {
+  margin-top: 28px;
+  background: var(--card-color, var(--section-color));
+  border-color: color-mix(in srgb, var(--card-color, var(--section-color)) 72%, #172d43);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--card-color, var(--section-color)) 72%, #172d43);
+}
+
+.interactive-shell {
+  width: min(calc(100% - 40px), 920px);
+}
+
+.quiz-form {
+  display: grid;
+  gap: 24px;
+  margin-top: 38px;
+  padding: clamp(22px, 4vw, 38px);
+}
+
+.quiz-question {
+  margin: 0;
+  padding: 26px;
+  background: var(--section-soft);
+  border: 3px solid var(--section-shadow);
+  border-radius: 24px;
+}
+
+.quiz-question legend {
+  padding: 0 8px;
+  color: var(--park-ink);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.answer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.answer-list label {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 15px 18px;
+  background: #fff;
+  border: 2px solid var(--section-shadow);
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.answer-list label:has(input:checked) {
+  border-color: var(--section-color);
+  box-shadow: inset 0 0 0 2px var(--section-color);
+}
+
+.answer-list input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--section-color);
+}
+
+.interactive-result {
+  margin-top: 26px;
+  padding: 26px;
+  color: var(--park-ink);
+  background: #fff;
+  border: 4px solid var(--section-color);
+  border-radius: 24px;
+  box-shadow: 0 7px 0 var(--section-shadow);
+}
+
+.interactive-result[hidden] {
+  display: none;
+}
+
+.interactive-result h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+}
+
+.interactive-result p {
+  margin: 12px 0 0;
+  color: var(--park-copy);
+}
+
+.fortune-machine {
+  margin-top: 38px;
+  padding: clamp(28px, 6vw, 58px);
+  text-align: center;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.9), transparent 12rem),
+    var(--section-soft);
+  border: 4px solid var(--section-color);
+  border-radius: 36px;
+  box-shadow: 0 10px 0 var(--section-shadow);
+}
+
+.fortune-sign {
+  display: inline-block;
+  padding: 14px 24px;
+  color: #fff;
+  background: var(--section-color);
+  border: 3px solid var(--section-dark);
+  border-radius: 999px;
+  box-shadow: 0 5px 0 var(--section-dark);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.fortune-machine .park-button {
+  margin-top: 36px;
+  border: 0;
+  cursor: pointer;
+}
+
+.fortune-ticket {
+  max-width: 620px;
+  margin: 34px auto 0;
+  padding: 34px;
+  background: #fff;
+  border: 4px dashed var(--section-color);
+  border-radius: 22px;
+}
+
+.fortune-ticket strong {
+  display: block;
+  color: var(--section-dark);
+  font-size: clamp(2rem, 7vw, 4rem);
+  line-height: 1;
+}
+
+.fortune-ticket p {
+  margin: 18px 0 0;
+  color: var(--park-copy);
+}
+
+.haunted-wrap {
+  margin-top: 38px;
+  overflow: hidden;
+  background: #f7f1ff;
+  border: 4px solid var(--section-color);
+  border-radius: 36px;
+  box-shadow: 0 10px 0 var(--section-shadow);
+}
+
+.haunted-scene {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 18%, #fff2b2 0 46px, rgba(255,242,178,0.2) 48px, transparent 105px),
+    linear-gradient(#31245b 0 45%, #70446f 72%, #192f2b 73%);
+}
+
+.haunted-scene::before,
+.haunted-scene::after {
+  position: absolute;
+  bottom: -90px;
+  width: 68%;
+  height: 210px;
+  content: "";
+  background: #163c31;
+  border-radius: 50% 50% 0 0;
+}
+
+.haunted-scene::before {
+  left: -12%;
+}
+
+.haunted-scene::after {
+  right: -15%;
+  background: #234b3e;
+}
+
+.haunted-house-art {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 62px;
+  width: min(76%, 520px);
+  height: 330px;
+  transform: translateX(-50%);
+}
+
+.house-body,
+.house-tower {
+  position: absolute;
+  bottom: 0;
+  background: #302347;
+  border: 7px solid #171326;
+}
+
+.house-body {
+  left: 10%;
+  width: 80%;
+  height: 220px;
+}
+
+.house-tower {
+  left: 24%;
+  width: 31%;
+  height: 290px;
+}
+
+.house-body::before,
+.house-tower::before {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 120%;
+  height: 76px;
+  content: "";
+  background: #51306f;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: translateX(-50%);
+}
+
+.house-door {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 0;
+  width: 82px;
+  height: 120px;
+  background: #15111e;
+  border: 6px solid #171326;
+  border-radius: 42px 42px 0 0;
+  transform: translateX(-50%);
+}
+
+.house-door::after {
+  position: absolute;
+  right: 12px;
+  top: 58%;
+  width: 10px;
+  height: 10px;
+  content: "";
+  background: #ffd35a;
+  border-radius: 50%;
+}
+
+.house-window {
+  position: absolute;
+  z-index: 4;
+  width: 42px;
+  height: 58px;
+  background: #ffdc55;
+  border: 5px solid #171326;
+  border-radius: 20px 20px 5px 5px;
+  box-shadow: 0 0 28px rgba(255, 220, 85, 0.65);
+}
+
+.house-window--one {
+  left: 18%;
+  bottom: 126px;
+}
+
+.house-window--two {
+  right: 16%;
+  bottom: 126px;
+}
+
+.house-window--three {
+  left: 34%;
+  bottom: 198px;
+}
+
+.css-ghost {
+  position: absolute;
+  z-index: 4;
+  width: 72px;
+  height: 92px;
+  background: #fff;
+  border-radius: 50% 50% 28% 28%;
+  filter: drop-shadow(0 8px 10px rgba(10, 8, 20, 0.28));
+  opacity: 0;
+}
+
+.css-ghost::before,
+.css-ghost::after {
+  position: absolute;
+  top: 33px;
+  width: 8px;
+  height: 12px;
+  content: "";
+  background: #25203e;
+  border-radius: 50%;
+}
+
+.css-ghost::before {
+  left: 22px;
+}
+
+.css-ghost::after {
+  right: 22px;
+}
+
+.css-ghost--one {
+  left: 12%;
+  top: 34%;
+}
+
+.css-ghost--two {
+  right: 11%;
+  top: 46%;
+  transform: scale(0.78);
+}
+
+.haunted-scene.is-awake .css-ghost {
+  opacity: 0.95;
+  animation: ghost-float 2.8s ease-in-out infinite alternate;
+}
+
+.haunted-scene.is-awake .css-ghost--two {
+  animation-delay: -1.2s;
+}
+
+.haunted-controls {
+  padding: 30px;
+  text-align: center;
+}
+
+.haunted-controls .park-button {
+  border: 0;
+  cursor: pointer;
+}
+
+.haunted-controls p {
+  margin: 20px 0 0;
+  color: var(--park-copy);
+}
+
+.side-gate-archive {
+  padding-block: 46px 110px;
+}
+
+.fanclub-gate {
+  position: relative;
+  padding: clamp(34px, 6vw, 62px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.fanclub-gate::before,
+.fanclub-gate::after {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  width: 14px;
+  content: "";
+  background: radial-gradient(circle, #fff 0 3px, var(--section-color) 4px 7px, transparent 8px) center top / 14px 24px repeat-y;
+}
+
+.fanclub-gate::before { left: 16px; }
+.fanclub-gate::after { right: 16px; }
+
+.fanclub-gate h2 {
+  margin: 10px 0 0;
+  font-size: clamp(2.7rem, 8vw, 6.2rem);
+  line-height: 0.9;
+}
+
+.fanclub-gate .gate-caption {
+  margin: 20px 0 0;
+  color: var(--section-dark);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.benefit-card {
+  padding: 30px;
+  background: #fff;
+  border: 4px solid var(--section-color);
+  border-radius: 28px;
+  box-shadow: 0 8px 0 var(--section-shadow);
+}
+
+.benefit-number {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  margin: 0;
+  color: #fff !important;
+  background: var(--section-color);
+  border: 3px solid var(--section-dark);
+  border-radius: 50%;
+  font-weight: 900;
+}
+
+.benefit-card h3 {
+  margin: 24px 0 0;
+  font-size: 1.35rem;
+}
+
+.benefit-card p:last-child {
+  margin: 14px 0 0;
+  color: var(--park-copy);
+  line-height: 1.8;
+}
+
+.archive-process {
+  margin-top: 38px;
+  padding: clamp(30px, 5vw, 48px);
+}
+
+.archive-process ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: fanclub-step;
+}
+
+.archive-process li {
+  position: relative;
+  padding: 52px 22px 22px;
+  color: var(--park-copy);
+  background: var(--section-soft);
+  border: 2px solid var(--section-shadow);
+  border-radius: 20px;
+  counter-increment: fanclub-step;
+}
+
+.archive-process li::before {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  content: "0" counter(fanclub-step);
+  color: var(--section-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.link-status {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 26px;
+  align-items: center;
+  padding: clamp(30px, 5vw, 48px);
+}
+
+.link-status-sign {
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-items: center;
+  color: #fff;
+  background: var(--section-color);
+  border: 5px solid var(--section-dark);
+  border-radius: 50%;
+  box-shadow: 0 6px 0 var(--section-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.link-status h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+}
+
+.link-status p {
+  margin: 14px 0 0;
+}
+
+.link-history {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.link-history article {
+  padding: 24px;
+  background: var(--section-soft);
+  border: 3px solid var(--section-shadow);
+  border-radius: 22px;
+}
+
+.link-history h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.link-history p {
+  margin: 12px 0 0;
+  color: var(--park-copy);
+  font-size: 0.82rem;
+}
+
+.banner-museum {
+  margin-top: 44px;
+  padding: clamp(30px, 5vw, 48px);
+}
+
+.banner-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  margin-top: 34px;
+}
+
+.banner-specimen {
+  padding: 24px;
+  background: var(--section-soft);
+  border: 2px solid var(--section-shadow);
+  border-radius: 22px;
+}
+
+.banner-art {
+  position: relative;
+  display: flex;
+  width: min(100%, 360px);
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(135deg, #1586ce, #65c8ef);
+  border: 5px solid #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 0 3px #17324d, 0 8px 0 rgba(23, 50, 77, 0.18);
+  font-size: clamp(1.45rem, 4vw, 2.45rem);
+  font-weight: 950;
+  letter-spacing: -0.04em;
+  text-shadow: 0 3px 0 #17324d;
+}
+
+.banner-art::after {
+  position: absolute;
+  inset: auto -10% -62% 36%;
+  height: 120px;
+  content: "";
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.banner-art--motion span {
+  animation: banner-pop 1.8s ease-in-out infinite alternate;
+}
+
+.banner-art--pink {
+  background: linear-gradient(135deg, #f14f87, #ff9ebc);
+}
+
+.banner-art--night {
+  background: linear-gradient(135deg, #2c2759, #704b86);
+}
+
+.banner-art--park {
+  color: #17324d;
+  background: linear-gradient(#77d6f4 0 60%, #82bd4b 61%);
+  text-shadow: 0 3px 0 #fff;
+}
+
+.banner-specimen h3 {
+  margin: 24px 0 0;
+  font-size: 1rem;
+}
+
+.banner-specimen p {
+  margin: 9px 0 0;
+  color: var(--park-copy);
+  font-size: 0.82rem;
+}
+
+.lost-and-found {
+  width: min(calc(100% - 40px), 920px);
+  padding-block: 72px 110px;
+}
+
+.lost-gate {
+  padding: clamp(34px, 7vw, 68px);
+  text-align: center;
+}
+
+.lost-signpost {
+  position: relative;
+  width: min(100%, 480px);
+  min-height: 265px;
+  margin-inline: auto;
+}
+
+.lost-signpost::after {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 24px;
+  height: 190px;
+  content: "";
+  background: #7b4a25;
+  border: 5px solid #4c2c16;
+  border-radius: 8px;
+  transform: translateX(-50%);
+}
+
+.direction-sign {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  display: grid;
+  width: min(86%, 390px);
+  min-height: 76px;
+  place-items: center;
+  padding: 12px 34px;
+  color: #fff;
+  border: 5px solid #17324d;
+  border-radius: 18px;
+  box-shadow: 0 7px 0 rgba(23, 50, 77, 0.22);
+  font-size: clamp(1rem, 3vw, 1.45rem);
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.direction-sign--home {
+  top: 12px;
+  background: #1979c8;
+  transform: translateX(-55%) rotate(-3deg);
+}
+
+.direction-sign--park {
+  top: 106px;
+  background: #ee4e8a;
+  transform: translateX(-45%) rotate(3deg);
+}
+
+.lost-gate h2 {
+  margin: 24px 0 0;
+  font-size: clamp(2.1rem, 6vw, 4.5rem);
+}
+
+.lost-gate > p {
+  max-width: 620px;
+  margin: 20px auto 0;
+  color: var(--park-copy);
+  line-height: 1.9;
+}
+
+.lost-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+@keyframes banner-pop {
+  from { transform: translateY(2px) scale(0.98); }
+  to { transform: translateY(-2px) scale(1.03); }
+}
+
+.park-attraction-page .page-return {
+  padding-bottom: 90px;
+}
+
+.park-attraction-page .site-footer {
+  color: #d8edff;
+  background: #1269b2;
+  border-top: 10px solid #0d4f91;
+}
+
+.park-attraction-page .footer-logo {
+  color: #fff;
+}
+
+@keyframes ghost-float {
+  from { transform: translateY(8px) rotate(-3deg); }
+  to { transform: translateY(-18px) rotate(3deg); }
+}
+
+@media (max-width: 900px) {
+  .park-attraction-page .global-menu {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 4px solid var(--section-color);
+  }
+
+  .track-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .song-content {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-grid,
+  .archive-process ol {
+    grid-template-columns: 1fr;
+  }
+
+  .link-history {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .show-card {
+    grid-template-columns: 120px minmax(0, 1fr);
+  }
+
+  .show-card a {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .attraction-hero {
+    min-height: 52svh;
+  }
+
+  .attraction-hero::before {
+    background-image:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.95)),
+      url("../images/common/blethland-park-map-v1.webp");
+    background-size: auto, 240%;
+  }
+
+  .music-page .attraction-hero::before {
+    background-position: center, 94% 34%;
+  }
+
+  .shows-page .attraction-hero::before {
+    background-position: center, 3% 78%;
+  }
+
+  .extras-page .attraction-hero::before,
+  .quiz-page .attraction-hero::before,
+  .fortune-page .attraction-hero::before,
+  .haunted-page .attraction-hero::before {
+    background-position: center, 96% 75%;
+  }
+
+  .fanclub-page .attraction-hero::before {
+    background-position: center, 41% 88%;
+  }
+
+  .links-page .attraction-hero::before {
+    background-position: center, 59% 88%;
+  }
+
+  .not-found-page .attraction-hero::before {
+    background-position: center, 50% 54%;
+  }
+
+  .park-intro {
+    padding-block: 70px 30px;
+  }
+
+  .track-section,
+  .shows-archive,
+  .extras-guide,
+  .interactive-section {
+    padding-block: 34px 80px;
+  }
+
+  .track-grid,
+  .extras-grid,
+  .answer-list {
+    grid-template-columns: 1fr;
+  }
+
+  .song-pager {
+    grid-template-columns: 1fr;
+  }
+
+  .link-status,
+  .link-history,
+  .banner-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .link-status-sign {
+    width: 92px;
+    height: 92px;
+  }
+
+  .track-card {
+    min-height: 235px;
+  }
+
+  .show-year {
+    padding: 22px 18px;
+  }
+
+  .show-year-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .show-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .show-card a {
+    grid-column: 1;
+  }
+
+  .extra-card {
+    min-height: auto;
+  }
+
+  .extra-card p:not(.card-caption, .section-kicker) {
+    min-height: 0;
+  }
+
+  .haunted-scene {
+    min-height: 430px;
+  }
+
+  .haunted-house-art {
+    width: 94%;
+    height: 290px;
+  }
+
+  .house-body {
+    height: 190px;
+  }
+
+  .house-tower {
+    height: 250px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .haunted-scene.is-awake .css-ghost,
+  .banner-art--motion span {
+    animation: none;
+  }
+}
