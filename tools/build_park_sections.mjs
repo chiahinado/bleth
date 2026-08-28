@@ -215,15 +215,16 @@ ${song.audio ? '          <span class="track-badge">AUDIO AVAILABLE</span>\n' : 
 
 const musicIndex = page({
   title: "MUSIC",
-  description: "BLETHの9曲を、歌詞・クレジット・当時のコメント・音源とともに紹介します。",
+  description: "BLETHの9曲を、クレジット・当時のコメント・音源とともに紹介します。",
   prefix: "../",
   current: "music",
   bodyClass: "music-page",
-  content: `${hero({ number: "ATTRACTION 03", title: "MUSIC", caption: "楽曲・歌詞・音源" })}
+  content: `${hero({ number: "ATTRACTION 03", title: "MUSIC", caption: "楽曲・クレジット・音源" })}
     <section class="park-intro section-shell" aria-labelledby="music-intro-title">
       <p class="section-kicker">BLETH SONG ARCHIVE</p>
       <h2 id="music-intro-title">楽曲をたどる</h2>
-      <p class="section-lead">BLETHの楽曲を、歌詞、クレジット、当時のコメントとともに紹介します。公開音源のある楽曲は各ページで再生できます。</p>
+      <p class="section-lead">BLETHの楽曲を、クレジット、当時のコメントとともに紹介します。公開音源のある楽曲は各ページで再生できます。</p>
+      <p class="archive-policy"><strong>NOTICE</strong><br>歌詞は掲載していません。</p>
     </section>
     <section class="track-section section-shell" aria-labelledby="track-list-title">
       <div class="section-heading">
@@ -242,7 +243,6 @@ await write("music/index.html", musicIndex);
 for (const [index, song] of songs.entries()) {
   const previous = index > 0 ? songs[index - 1] : null;
   const next = index < songs.length - 1 ? songs[index + 1] : null;
-  const lyrics = song.lyrics.map((stanza) => `          <p>${stanza.map(escapeHtml).join("<br>\n")}</p>`).join("\n");
   const audio = song.audio ? `<section class="song-meta park-panel">
           <p class="section-kicker">AUDIO</p>
           <h2>音源</h2>
@@ -258,11 +258,11 @@ for (const [index, song] of songs.entries()) {
         </section>` : "";
   const html = page({
     title: `${song.title} | MUSIC`,
-    description: `BLETH「${song.title}」の歌詞・クレジット${song.audio ? "・音源" : ""}。`,
+    description: `BLETH「${song.title}」のクレジット${song.audio ? "・音源" : ""}。`,
     prefix: "../../",
     current: "music",
     bodyClass: "music-page",
-    content: `${hero({ number: `MUSIC · TRACK ${String(index + 1).padStart(2, "0")}`, title: song.title, caption: "LYRICS & CREDIT", compact: true })}
+    content: `${hero({ number: `MUSIC · TRACK ${String(index + 1).padStart(2, "0")}`, title: song.title, caption: "SONG INFORMATION", compact: true })}
     <div class="song-content section-shell">
       <aside class="song-sidebar">
         <section class="song-meta park-panel">
@@ -274,12 +274,10 @@ for (const [index, song] of songs.entries()) {
 ${song.note ? `            <div><dt>ARCHIVE NOTE</dt><dd>${escapeHtml(song.note)}</dd></div>\n` : ""}          </dl>
         </section>
 ${[audio, comment].filter(Boolean).map((block) => `        ${block}\n`).join("")}      </aside>
-      <section class="lyrics-panel park-panel" aria-labelledby="lyrics-title">
-        <p class="section-kicker">LYRICS</p>
-        <h2 id="lyrics-title">歌詞</h2>
-        <div class="lyrics-text">
-${lyrics}
-        </div>
+      <section class="song-notice park-panel" aria-labelledby="lyrics-notice-title">
+        <p class="section-kicker">NOTICE</p>
+        <h2 id="lyrics-notice-title">歌詞について</h2>
+        <p>歌詞は掲載していません。</p>
       </section>
     </div>
     <nav class="song-pager section-shell" aria-label="楽曲ページ">
@@ -353,7 +351,7 @@ await write("shows/index.html", showsIndex);
 
 const extrasIndex = page({
   title: "EXTRAS",
-  description: "クイズ、おみくじ、お化け屋敷など、BLETHLANDならではの企画を楽しめる特別展示です。",
+  description: "BLETHLANDのクイズ、おみくじ、お化け屋敷、特別展示は現在休止中です。",
   prefix: "../",
   current: "extras",
   bodyClass: "extras-page",
@@ -361,30 +359,30 @@ const extrasIndex = page({
     <section class="park-intro section-shell" aria-labelledby="extras-intro-title">
       <p class="section-kicker">SPECIAL AREA</p>
       <h2 id="extras-intro-title">遊びと特別企画</h2>
-      <p class="section-lead">クイズ、おみくじ、展示など、BLETHLANDならではの企画をお楽しみください。</p>
+      <p class="section-lead">EXTRAS内の4つの企画は、すべて現在休止中です。</p>
     </section>
     <section class="extras-guide section-shell" aria-labelledby="extras-guide-title">
       <div class="section-heading"><p class="section-kicker">PARK SIDE</p><h2 id="extras-guide-title">EXTRA ATTRACTIONS</h2></div>
       <div class="extras-grid">
         <article class="extra-card extra-card--quiz">
           <p class="section-kicker">CHALLENGE</p><h3>BLETH QUIZ</h3><p class="card-caption">BLETHクイズ</p>
-          <p>旧BLETHLANDの入園クイズを、3問のブラウザ内ゲームとして再構築しました。</p>
-          <a class="park-button" href="quiz/">クイズに挑戦する</a>
+          <p>BLETHLANDの入園クイズです。</p>
+          <span class="archive-status">現在休止中</span>
         </article>
         <article class="extra-card extra-card--fortune">
           <p class="section-kicker">TODAY'S TICKET</p><h3>BLETHLAND FORTUNE</h3><p class="card-caption">おみくじ</p>
-          <p>個人情報の入力なしで、その日のBLETHLAND運勢を1枚引けます。</p>
-          <a class="park-button" href="fortune/">おみくじを引く</a>
+          <p>BLETHLANDの運勢を占うおみくじです。</p>
+          <span class="archive-status">現在休止中</span>
         </article>
         <article class="extra-card extra-card--haunted">
           <p class="section-kicker">NIGHT RIDE</p><h3>HAUNTED HOUSE</h3><p class="card-caption">お化け屋敷</p>
-          <p>新しく描き起こしたCSSアートと光の演出で楽しむ、小さなお化け屋敷です。</p>
-          <a class="park-button" href="haunted-house/">お化け屋敷に入る</a>
+          <p>BLETHLANDのお化け屋敷です。</p>
+          <span class="archive-status">現在休止中</span>
         </article>
         <article class="extra-card extra-card--hold">
           <p class="section-kicker">HISTORICAL EXHIBIT</p><h3>SPECIAL EXHIBIT</h3><p class="card-caption">GLAYコピーバンド企画</p>
           <p>全国のGLAYコピーバンドを紹介する企画が、BLETHLAND内に設けられていました。</p>
-          <span class="archive-status">展示準備中</span>
+          <span class="archive-status">現在休止中</span>
         </article>
       </div>
     </section>
@@ -395,25 +393,16 @@ await write("extras/index.html", extrasIndex);
 
 const quizPage = page({
   title: "BLETH QUIZ | EXTRAS",
-  description: "旧BLETHLANDの入園クイズを再構築した、3問のブラウザ内クイズです。",
+  description: "BLETHLANDのクイズは現在休止中です。",
   prefix: "../../",
   current: "extras",
   bodyClass: "quiz-page",
   interactive: true,
   content: `${hero({ number: "EXTRAS · CHALLENGE", title: "BLETH QUIZ", caption: "BLETHクイズ", compact: true })}
-    <section class="park-intro interactive-shell section-shell" aria-labelledby="quiz-intro-title">
-      <p class="section-kicker">ENTRANCE CHALLENGE</p><h2 id="quiz-intro-title">3問に挑戦</h2>
-      <p class="section-lead">旧BLETHLANDの入園クイズを、当時の題材を残して遊びやすく再構築しました。</p>
-      <p class="archive-policy">回答内容と結果は保存・送信されません。</p>
-    </section>
-    <section class="interactive-section interactive-shell section-shell">
-      <form class="quiz-form park-panel" data-quiz>
-        <fieldset class="quiz-question"><legend>Q1. BLETHのメンバーの国籍は？</legend><div class="answer-list"><label><input type="radio" name="nationality" value="japan">日本</label><label><input type="radio" name="nationality" value="uk">イギリス</label></div></fieldset>
-        <fieldset class="quiz-question"><legend>Q2. BLETHの楽曲は？</legend><div class="answer-list"><label><input type="radio" name="song" value="pure-soul">pure soul</label><label><input type="radio" name="song" value="first-memory">first memory</label></div></fieldset>
-        <fieldset class="quiz-question"><legend>Q3. BLETHがコピーしていたアーティストは？</legend><div class="answer-list"><label><input type="radio" name="copy" value="ccb">C-C-B</label><label><input type="radio" name="copy" value="glay">GLAY</label></div></fieldset>
-        <button class="park-button" type="submit">結果を見る</button>
-      </form>
-      <div class="interactive-result" data-quiz-result role="status" tabindex="-1" hidden></div>
+    <section class="park-intro interactive-shell section-shell" aria-labelledby="quiz-suspended-title">
+      <p class="section-kicker">NOTICE</p>
+      <h2 id="quiz-suspended-title">現在休止中です</h2>
+      <p class="section-lead">このコンテンツは現在ご利用いただけません。</p>
     </section>
     <nav class="page-return section-shell" aria-label="ページ移動"><a class="text-link" href="../">EXTRASへ戻る</a></nav>`,
 });
@@ -422,23 +411,16 @@ await write("extras/quiz/index.html", quizPage);
 
 const fortunePage = page({
   title: "BLETHLAND FORTUNE | EXTRAS",
-  description: "個人情報を入力せず、ブラウザ内だけで楽しめるBLETHLANDのおみくじです。",
+  description: "BLETHLANDのおみくじは現在休止中です。",
   prefix: "../../",
   current: "extras",
   bodyClass: "fortune-page",
   interactive: true,
   content: `${hero({ number: "EXTRAS · TODAY'S TICKET", title: "BLETHLAND FORTUNE", caption: "おみくじ", compact: true })}
-    <section class="park-intro interactive-shell section-shell" aria-labelledby="fortune-intro-title">
-      <p class="section-kicker">ONE DAY TICKET</p><h2 id="fortune-intro-title">今日の一枚</h2>
-      <p class="section-lead">ボタンを押すと、BLETHLANDから今日の運勢チケットが届きます。</p>
-      <p class="archive-policy">生年月日などの入力は不要です。抽選結果は保存・送信されません。</p>
-    </section>
-    <section class="interactive-section interactive-shell section-shell">
-      <div class="fortune-machine">
-        <span class="fortune-sign">BLETHLAND FORTUNE</span><br>
-        <button class="park-button" type="button" data-fortune-button>おみくじを引く</button>
-        <div class="fortune-ticket" data-fortune-result role="status" tabindex="-1" hidden></div>
-      </div>
+    <section class="park-intro interactive-shell section-shell" aria-labelledby="fortune-suspended-title">
+      <p class="section-kicker">NOTICE</p>
+      <h2 id="fortune-suspended-title">現在休止中です</h2>
+      <p class="section-lead">このコンテンツは現在ご利用いただけません。</p>
     </section>
     <nav class="page-return section-shell" aria-label="ページ移動"><a class="text-link" href="../">EXTRASへ戻る</a></nav>`,
 });
@@ -447,30 +429,16 @@ await write("extras/fortune/index.html", fortunePage);
 
 const hauntedPage = page({
   title: "HAUNTED HOUSE | EXTRAS",
-  description: "新しいCSSアートと光の演出で再構築した、BLETHLANDのお化け屋敷です。",
+  description: "BLETHLANDのお化け屋敷は現在休止中です。",
   prefix: "../../",
   current: "extras",
   bodyClass: "haunted-page",
   interactive: true,
   content: `${hero({ number: "EXTRAS · NIGHT RIDE", title: "HAUNTED HOUSE", caption: "お化け屋敷", compact: true })}
-    <section class="park-intro interactive-shell section-shell" aria-labelledby="haunted-intro-title">
-      <p class="section-kicker">AFTER DARK</p><h2 id="haunted-intro-title">夜のBLETHLANDへ</h2>
-      <p class="section-lead">明かりを消すと、静かな館の住人たちが姿を現します。</p>
-    </section>
-    <section class="interactive-section interactive-shell section-shell">
-      <div class="haunted-wrap">
-        <div class="haunted-scene" data-haunted-scene>
-          <div class="haunted-house-art" aria-hidden="true">
-            <span class="house-body"></span><span class="house-tower"></span><span class="house-door"></span>
-            <span class="house-window house-window--one"></span><span class="house-window house-window--two"></span><span class="house-window house-window--three"></span>
-          </div>
-          <span class="css-ghost css-ghost--one" aria-hidden="true"></span><span class="css-ghost css-ghost--two" aria-hidden="true"></span>
-        </div>
-        <div class="haunted-controls">
-          <button class="park-button" type="button" aria-pressed="false" data-haunt-toggle>明かりを消す</button>
-          <p data-haunt-message>館の窓には、まだ明かりが灯っています。</p>
-        </div>
-      </div>
+    <section class="park-intro interactive-shell section-shell" aria-labelledby="haunted-suspended-title">
+      <p class="section-kicker">NOTICE</p>
+      <h2 id="haunted-suspended-title">現在休止中です</h2>
+      <p class="section-lead">このコンテンツは現在ご利用いただけません。</p>
     </section>
     <nav class="page-return section-shell" aria-label="ページ移動"><a class="text-link" href="../">EXTRASへ戻る</a></nav>`,
 });
