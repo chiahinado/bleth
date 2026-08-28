@@ -132,7 +132,6 @@ const write = async (relativePath, content) => {
 const header = (prefix, liveHref) => `<header class="site-header is-scrolled" data-header>
     <a class="site-logo" href="${prefix}" aria-label="BLETHLAND トップ">
       <span>BLETHLAND</span>
-      <small>THE OFFICIAL ARCHIVE OF BLETH</small>
     </a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-menu" data-menu-button>
       <span>MENU</span>
@@ -159,8 +158,7 @@ ${items.map((event) => `            <article class="timeline-item">
                 <h3>${escapeHtml(event.title)}</h3>
                 <p>${escapeHtml(event.venue)}${event.note ? ` · ${escapeHtml(event.note)}` : ""}</p>
               </div>
-              ${event.detail ? `<a href="${event.d}/" aria-label="${escapeHtml(event.title)}の詳細を見る">詳細を見る</a>` : "<span>年表記録</span>"}
-            </article>`).join("\n")}
+${event.detail ? `              <a href="${event.d}/" aria-label="${escapeHtml(event.title)}">VIEW ↗</a>\n` : ""}            </article>`).join("\n")}
           </div>
         </section>`;
 }).join("\n\n");
@@ -170,13 +168,14 @@ const liveIndex = `<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BLETHのライブを、日付・会場・写真とともにたどるアーカイブです。">
+  <meta name="description" content="BLETH LIVE — 1999–2003.">
   <meta name="theme-color" content="#eef9ff">
   <title>LIVE ARCHIVE | BLETHLAND</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/live.css">
   <link rel="stylesheet" href="../assets/css/park-theme.css">
+  <link rel="stylesheet" href="../assets/css/polish.css">
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body class="live-page">
@@ -186,27 +185,18 @@ const liveIndex = `<!doctype html>
     <section class="page-hero live-hero">
       <p class="eyebrow">ATTRACTION 01</p>
       <h1>LIVE ARCHIVE</h1>
-      <p>ライブ・写真</p>
     </section>
-    <section class="live-intro section-shell">
-      <p class="section-kicker">HISTORY OF BLETH</p>
-      <h2>ライブの記録</h2>
-      <p class="section-lead">BLETHのライブを、日付・会場・写真とともにたどるアーカイブです。</p>
-      <p class="archive-count">1999–2003 · 26 EVENTS · 16 PHOTO ARCHIVES</p>
-    </section>
+    <div class="live-index-bar section-shell"><span>1999—2003</span><span>26 SHOWS / 16 PHOTO SETS</span></div>
     <div class="timeline section-shell">
 ${timeline}
     </div>
-    <nav class="page-return section-shell" aria-label="ページ移動">
-      <a class="text-link" href="../">BLETHLANDへ戻る</a>
-    </nav>
   </main>
 </body>
 </html>`;
 
 const imageCaption = (event, file, photoIndex, photoTotal) => {
-  if (file.startsWith("ticket")) return "当時のチケット";
-  return photoTotal > 1 ? `ライブ写真 ${photoIndex}` : "ライブ写真";
+  if (file.startsWith("ticket")) return "TICKET";
+  return photoTotal > 1 ? `PHOTO ${String(photoIndex).padStart(2, "0")}` : "PHOTO";
 };
 
 for (const [index, event] of details.entries()) {
@@ -215,8 +205,7 @@ for (const [index, event] of details.entries()) {
   const photoTotal = event.images.filter((file) => file.startsWith("photo")).length;
   let photoIndex = 0;
   const performers = event.performers.length ? `<section class="event-panel">
-          <p class="section-kicker">LINEUP</p>
-          <h2>出演</h2>
+          <p class="panel-label">LINEUP</p>
           <ul class="performer-list">
 ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).join("\n")}
           </ul>
@@ -234,7 +223,7 @@ ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).joi
   }).join("\n");
   const pager = `<nav class="event-pager" aria-label="ライブ詳細ページ">
         ${previous ? `<a href="../${previous.d}/"><span>PREVIOUS</span>${escapeHtml(previous.date)}</a>` : "<span></span>"}
-        <a class="archive-return" href="../">LIVE ARCHIVEへ戻る</a>
+        <a class="archive-return" href="../">LIVE</a>
         ${next ? `<a class="next-event" href="../${next.d}/"><span>NEXT</span>${escapeHtml(next.date)}</a>` : "<span></span>"}
       </nav>`;
   const html = `<!doctype html>
@@ -249,6 +238,7 @@ ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).joi
   <link rel="stylesheet" href="../../assets/css/main.css">
   <link rel="stylesheet" href="../../assets/css/live.css">
   <link rel="stylesheet" href="../../assets/css/park-theme.css">
+  <link rel="stylesheet" href="../../assets/css/polish.css">
   <script src="../../assets/js/main.js" defer></script>
 </head>
 <body class="live-detail-page">
@@ -261,20 +251,13 @@ ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).joi
       <span>${escapeHtml(event.date)}</span>
     </nav>
     <header class="event-hero section-shell">
-      <p class="eyebrow">LIVE ARCHIVE</p>
       <time datetime="${event.d}">${escapeHtml(event.date)}</time>
       <h1>${escapeHtml(event.title)}</h1>
       <p class="event-venue">${escapeHtml(event.venue)}</p>
     </header>
     <div class="event-content section-shell">
-      <section class="event-panel event-summary">
-        <p class="section-kicker">ARCHIVE NOTE</p>
-        <h2>当時の記録</h2>
-        <p>${escapeHtml(event.summary)}</p>
-      </section>
       <section class="event-panel event-info">
-        <p class="section-kicker">EVENT INFO</p>
-        <h2>公演情報</h2>
+        <p class="panel-label">DETAILS</p>
         <dl>
           <div><dt>DATE</dt><dd>${escapeHtml(event.date)}</dd></div>
           <div><dt>VENUE</dt><dd>${escapeHtml(event.venue)}</dd></div>
@@ -283,13 +266,12 @@ ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).joi
       </section>
 ${performers ? `      ${performers}\n` : ""}      <section class="event-gallery" aria-labelledby="gallery-title">
         <div class="section-heading">
-          <p class="section-kicker">PHOTO ARCHIVE</p>
-          <h2 id="gallery-title">写真・資料</h2>
+          <p class="section-kicker">PHOTO SET</p>
+          <h2 id="gallery-title">PHOTOS</h2>
         </div>
         <div class="gallery-grid">
 ${gallery}
         </div>
-        <p class="image-note">当時の小さな画像を、原寸を基準に掲載しています。</p>
       </section>
       ${pager}
     </div>

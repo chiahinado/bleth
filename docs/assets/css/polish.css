@@ -1,0 +1,746 @@
+:root {
+  --header-height: 72px;
+  --ui-line: rgba(23, 50, 77, 0.16);
+  --ui-shadow: 0 18px 50px rgba(23, 50, 77, 0.08);
+}
+
+body {
+  line-height: 1.65;
+}
+
+.site-header,
+.home-page .site-header,
+.park-attraction-page .site-header,
+.members-page .site-header,
+.live-page .site-header,
+.live-detail-page .site-header {
+  min-height: var(--header-height);
+  padding-block: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom-width: 1px;
+  border-bottom-color: var(--ui-line);
+  box-shadow: 0 8px 30px rgba(23, 50, 77, 0.05);
+}
+
+.site-logo {
+  display: block;
+}
+
+.site-logo span {
+  font-size: 1.12rem;
+  letter-spacing: 0.04em;
+}
+
+.global-menu {
+  gap: clamp(18px, 2.6vw, 38px);
+}
+
+.global-menu a {
+  color: #49657c;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+}
+
+.menu-button,
+.home-page .menu-button,
+.park-attraction-page .menu-button,
+.members-page .menu-button,
+.live-page .menu-button,
+.live-detail-page .menu-button {
+  min-width: 68px;
+  min-height: 40px;
+  padding: 8px 13px;
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+.park-map-hero {
+  border-bottom-width: 4px;
+}
+
+.park-map-canvas {
+  border-inline: 0;
+}
+
+.page-hero,
+.attraction-hero,
+.members-page .page-hero,
+.live-page .page-hero {
+  min-height: 34svh;
+  padding-bottom: 34px;
+  border-bottom-width: 4px;
+}
+
+.attraction-hero--compact {
+  min-height: 29svh;
+}
+
+.page-hero h1,
+.attraction-hero h1,
+.members-page .page-hero h1,
+.live-page .page-hero h1 {
+  max-width: 920px;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  letter-spacing: -0.055em;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.95);
+}
+
+.eyebrow,
+.section-kicker,
+.panel-label {
+  margin: 0 0 10px;
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+
+.panel-label {
+  color: var(--section-dark, var(--park-blue-dark));
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2,
+.park-attraction-page .section-heading h2,
+.members-page .members-section h2,
+.live-detail-page .event-gallery h2 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4.8vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.park-attraction-page,
+.members-page,
+.live-page,
+.live-detail-page {
+  background: #f6f3e9;
+}
+
+.park-panel,
+.members-page .member-card,
+.live-detail-page .event-panel,
+.live-detail-page .event-gallery {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--ui-line);
+  border-top: 4px solid var(--section-color, var(--park-blue));
+  border-radius: 16px;
+  box-shadow: var(--ui-shadow);
+}
+
+.track-section,
+.shows-archive,
+.extras-guide,
+.side-gate-archive {
+  padding-block: 66px 104px;
+}
+
+.track-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 0;
+}
+
+.track-card {
+  position: relative;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  color: var(--park-ink);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--ui-line);
+  border-top: 5px solid var(--section-color);
+  border-radius: 14px;
+  box-shadow: var(--ui-shadow);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.track-card::after {
+  display: none;
+}
+
+.track-card:hover,
+.track-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 55px rgba(23, 50, 77, 0.14);
+}
+
+.track-card h3 {
+  max-width: 88%;
+  font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+  line-height: 1.02;
+}
+
+.track-number {
+  margin-bottom: 36px;
+}
+
+.track-badge {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 5px 9px;
+  border: 1px solid var(--section-color);
+  font-size: 0.58rem;
+}
+
+.track-arrow {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--section-dark);
+  font-size: 1.35rem;
+}
+
+.song-content {
+  padding-block: 58px 74px;
+}
+
+.song-sidebar {
+  gap: 16px;
+}
+
+.song-meta,
+.song-comment {
+  padding: clamp(24px, 3vw, 34px);
+}
+
+.song-meta dl {
+  margin-top: 22px;
+}
+
+.song-meta dl div {
+  border-bottom-width: 1px;
+}
+
+.song-comment blockquote {
+  margin-top: 20px;
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+.song-pager {
+  gap: 10px;
+  padding-bottom: 84px;
+}
+
+.song-pager a {
+  min-height: 64px;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--ui-line);
+  border-radius: 10px;
+  font-size: 0.78rem;
+}
+
+.song-pager a small {
+  color: var(--section-dark);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+}
+
+.song-pager a strong {
+  line-height: 1.25;
+}
+
+.song-pager .song-pager-home {
+  background: var(--section-color);
+  border: 0;
+}
+
+.next-show {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 60px 28px;
+  border-bottom: 1px solid var(--ui-line);
+}
+
+.next-show h2 {
+  margin: 0;
+  color: var(--section-dark);
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.shows-archive {
+  padding-top: 0;
+}
+
+.show-year {
+  margin: 0;
+  padding: 46px 0;
+  border-top: 1px solid var(--ui-line);
+}
+
+.show-year:first-child {
+  border-top: 0;
+}
+
+.show-year-heading {
+  padding-bottom: 24px;
+  border-bottom: 0;
+}
+
+.show-year-heading h2 {
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+}
+
+.show-list {
+  gap: 0;
+  margin-top: 0;
+  border-top: 1px solid var(--ui-line);
+}
+
+.show-card {
+  grid-template-columns: 130px minmax(0, 1fr) auto;
+  gap: 24px;
+  padding: 22px 4px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ui-line);
+  border-radius: 0;
+}
+
+.show-card a,
+.park-button {
+  min-height: 38px;
+  padding: 8px 13px;
+  background: transparent;
+  border: 1px solid var(--section-color);
+  border-radius: 7px;
+  box-shadow: none;
+  color: var(--section-dark);
+  font-size: 0.65rem;
+}
+
+.show-card a:hover,
+.show-card a:focus-visible,
+.park-button:hover,
+.park-button:focus-visible {
+  color: #fff;
+  background: var(--section-color);
+  box-shadow: none;
+  transform: none;
+}
+
+.extras-grid {
+  gap: 16px;
+  margin-top: 0;
+}
+
+.extra-card {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--ui-line);
+  border-top: 5px solid var(--card-color, var(--section-color));
+  border-radius: 14px;
+  box-shadow: var(--ui-shadow);
+}
+
+.extra-card h3 {
+  margin-top: 32px;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+}
+
+.extra-card .card-caption {
+  margin-top: 10px;
+}
+
+.archive-status {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 6px 10px;
+  color: #fff;
+  background: var(--card-color, var(--section-color));
+  border: 0;
+  border-radius: 6px;
+  font-size: 0.58rem;
+}
+
+.closed-screen {
+  display: grid;
+  place-items: center;
+  gap: 24px;
+  padding-block: 88px 120px;
+}
+
+.closed-screen strong {
+  color: var(--section-dark);
+  font-size: clamp(4rem, 14vw, 10rem);
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+}
+
+.closed-screen a {
+  color: var(--park-copy);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+}
+
+.side-gate-archive {
+  display: grid;
+  gap: 52px;
+}
+
+.fanclub-gate {
+  padding: clamp(38px, 6vw, 72px);
+  color: #fff;
+  background: #17283d;
+  border-top-color: var(--section-color);
+  text-align: center;
+}
+
+.fanclub-gate h2 {
+  color: #fff;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+}
+
+.fanclub-gate .gate-caption {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.benefit-grid {
+  gap: 16px;
+}
+
+.benefit-card {
+  min-height: 190px;
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--ui-line);
+  border-top: 4px solid var(--section-color);
+  border-radius: 14px;
+  box-shadow: var(--ui-shadow);
+}
+
+.benefit-card h3 {
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+.archive-process,
+.banner-museum,
+.link-status {
+  padding: clamp(28px, 4vw, 44px);
+}
+
+.link-status {
+  grid-template-columns: 150px 1fr;
+}
+
+.link-status-sign {
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.banner-gallery {
+  gap: 14px;
+}
+
+.banner-specimen {
+  padding: 16px;
+  border-width: 1px;
+  border-radius: 10px;
+}
+
+.banner-specimen h3 {
+  margin-bottom: 0;
+}
+
+.lost-and-found {
+  padding-block: 68px 100px;
+}
+
+.lost-gate {
+  padding: clamp(36px, 6vw, 70px);
+}
+
+.lost-gate h2 {
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+}
+
+.members-page .members-section {
+  padding-block: 70px 104px;
+}
+
+.members-page .member-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-top: 0;
+}
+
+.members-page .member-card {
+  min-height: 180px;
+  align-items: flex-start;
+  padding: 26px;
+  text-align: left;
+}
+
+.members-page .member-card h3 {
+  margin-top: auto;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.live-index-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 60px 28px;
+  color: var(--park-blue-dark);
+  border-bottom: 1px solid var(--ui-line);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.live-page .timeline {
+  padding-bottom: 104px;
+}
+
+.live-page .timeline-year {
+  grid-template-columns: minmax(110px, 0.22fr) 1fr;
+  padding: 46px 0;
+  border-top: 1px solid var(--ui-line);
+}
+
+.live-page .timeline-year:first-child {
+  border-top: 0;
+}
+
+.live-page .timeline-item {
+  min-height: 96px;
+  margin: 0;
+  padding: 20px 2px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ui-line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.live-page .timeline-item:first-child {
+  border-top: 1px solid var(--ui-line);
+}
+
+.live-page .timeline-item > a {
+  padding: 6px 0;
+  color: var(--park-blue-dark);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+}
+
+.live-detail-page .breadcrumb {
+  padding-top: calc(var(--header-height) + 26px);
+}
+
+.live-detail-page .event-hero {
+  margin-top: 24px;
+  padding: clamp(32px, 5vw, 58px);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.8)),
+    url("../images/common/blethland-park-map-v1.webp");
+  border: 1px solid var(--ui-line);
+  border-left: 6px solid var(--park-blue);
+  border-radius: 14px;
+  box-shadow: var(--ui-shadow);
+}
+
+.live-detail-page .event-content {
+  gap: 16px;
+  padding-block: 52px 90px;
+}
+
+.live-detail-page .event-panel,
+.live-detail-page .event-gallery {
+  padding: clamp(24px, 3.5vw, 36px);
+}
+
+.live-detail-page .event-info:only-child {
+  grid-column: 1 / -1;
+}
+
+.live-detail-page .performer-list li {
+  background: #f5f9fb;
+  border-color: var(--ui-line);
+}
+
+.live-detail-page .gallery-grid {
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.live-detail-page .gallery-grid figure {
+  min-height: 220px;
+  padding: 18px 16px 12px;
+  background: #f5f7f7;
+  border: 1px solid var(--ui-line);
+  border-radius: 10px;
+}
+
+.live-detail-page .gallery-grid figcaption {
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.live-detail-page .event-pager .archive-return {
+  background: var(--park-blue);
+  border: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .home-page .global-menu,
+  .park-attraction-page .global-menu,
+  .members-page .global-menu,
+  .live-page .global-menu,
+  .live-detail-page .global-menu {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom-width: 1px;
+    border-bottom-color: var(--ui-line);
+  }
+}
+
+@media (max-width: 760px) {
+  .track-grid,
+  .extras-grid,
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .show-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .show-card a {
+    justify-self: start;
+    margin-top: 4px;
+  }
+
+  .link-status {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .site-logo span {
+    font-size: 1rem;
+  }
+
+  .page-hero,
+  .attraction-hero,
+  .members-page .page-hero,
+  .live-page .page-hero {
+    min-height: 30svh;
+    padding-bottom: 26px;
+  }
+
+  .attraction-hero--compact {
+    min-height: 27svh;
+  }
+
+  .page-hero h1,
+  .attraction-hero h1,
+  .members-page .page-hero h1,
+  .live-page .page-hero h1 {
+    font-size: clamp(2.35rem, 12vw, 4rem);
+  }
+
+  .track-section,
+  .shows-archive,
+  .extras-guide,
+  .side-gate-archive,
+  .members-page .members-section {
+    padding-block: 48px 76px;
+  }
+
+  .track-card {
+    min-height: 180px;
+  }
+
+  .next-show {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 46px 24px;
+  }
+
+  .live-index-bar {
+    padding-block: 44px 22px;
+    font-size: 0.56rem;
+  }
+
+  .live-page .timeline-year {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 36px 0;
+  }
+
+  .live-page .timeline-year > h2 {
+    position: static;
+    font-size: 3rem;
+  }
+
+  .live-page .timeline-item {
+    grid-template-columns: 1fr auto;
+    gap: 10px 14px;
+  }
+
+  .live-page .timeline-item time {
+    grid-column: 1 / -1;
+  }
+
+  .live-page .timeline-item > div {
+    min-width: 0;
+  }
+
+  .live-detail-page .event-hero {
+    padding: 26px 22px;
+    background-size: auto, 230%;
+  }
+
+  .live-detail-page .event-content {
+    grid-template-columns: 1fr;
+  }
+
+  .live-detail-page .event-panel,
+  .live-detail-page .event-gallery {
+    grid-column: 1;
+  }
+
+  .song-pager a {
+    min-width: 0;
+    padding-inline: 8px;
+  }
+
+  .song-pager a strong {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .closed-screen {
+    padding-block: 72px 90px;
+  }
+}
