@@ -587,10 +587,10 @@ a {
 }
 
 .page-hero {
-  min-height: 54svh;
+  min-height: 42svh;
   display: grid;
   align-content: end;
-  padding: calc(var(--header-height) + 80px) max(20px, calc((100vw - var(--max-width)) / 2)) 70px;
+  padding: calc(var(--header-height) + 48px) max(20px, calc((100vw - var(--max-width)) / 2)) 46px;
   background:
     radial-gradient(circle at 82% 24%, rgba(111, 230, 197, 0.32), transparent 22rem),
     linear-gradient(145deg, #07111f, #163d43);
@@ -598,13 +598,13 @@ a {
 
 .page-hero h1 {
   margin: 0;
-  font-size: clamp(4rem, 13vw, 10rem);
-  line-height: 0.86;
-  letter-spacing: -0.07em;
+  font-size: clamp(2.5rem, 7.5vw, 5.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
 }
 
 .page-hero > p:last-child {
-  margin: 22px 0 0;
+  margin: 14px 0 0;
   color: var(--mint);
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -832,7 +832,7 @@ a {
   }
 
   .page-hero {
-    min-height: 45svh;
+    min-height: 35svh;
   }
 }
 

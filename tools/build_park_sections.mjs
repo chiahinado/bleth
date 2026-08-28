@@ -570,11 +570,11 @@ const notFoundPage = page({
   content: `${hero({ number: "LOST IN BLETHLAND", title: "404", caption: "ページが見つかりません", compact: true })}
     <section class="lost-and-found section-shell">
       <div class="lost-gate park-panel">
-        <div class="lost-signpost" aria-hidden="true"><span class="direction-sign direction-sign--home">BLETHLAND GATE</span><span class="direction-sign direction-sign--park">ATTRACTIONS</span></div>
+        <div class="lost-signpost" aria-hidden="true"><span class="direction-sign direction-sign--home">BLETHLAND GATE</span><span class="direction-sign direction-sign--park">PARK MAP</span></div>
         <p class="section-kicker">LOST &amp; FOUND</p>
         <h2>道に迷ったようです</h2>
         <p>お探しのページは移動したか、現在のBLETHLANDには存在しません。正面ゲートかアトラクション案内から、もう一度お進みください。</p>
-        <div class="lost-actions"><a class="park-button" href="/bleth/">正面ゲートへ戻る</a><a class="park-button" href="/bleth/#attractions">アトラクションを見る</a></div>
+        <div class="lost-actions"><a class="park-button" href="/bleth/">遊園地マップへ戻る</a></div>
       </div>
     </section>`,
 });

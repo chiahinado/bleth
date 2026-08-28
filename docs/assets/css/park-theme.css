@@ -61,7 +61,7 @@
 .live-page .page-hero {
   position: relative;
   isolation: isolate;
-  min-height: 62svh;
+  min-height: 44svh;
   overflow: hidden;
   color: var(--park-ink);
   border-bottom: 10px solid var(--park-blue);
@@ -91,7 +91,7 @@
 
 .members-page .page-hero h1,
 .live-page .page-hero h1 {
-  max-width: 900px;
+  max-width: 760px;
   color: var(--park-ink);
   text-shadow:
     0 3px 0 #fff,
@@ -278,7 +278,7 @@
 @media (max-width: 620px) {
   .members-page .page-hero,
   .live-page .page-hero {
-    min-height: 52svh;
+    min-height: 38svh;
   }
 
   .members-page .page-hero::before,

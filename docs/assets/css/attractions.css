@@ -120,7 +120,7 @@
 .attraction-hero {
   position: relative;
   isolation: isolate;
-  min-height: 62svh;
+  min-height: 44svh;
   overflow: hidden;
   color: var(--park-ink);
   border-bottom: 10px solid var(--section-color);
@@ -140,7 +140,7 @@
 }
 
 .attraction-hero h1 {
-  max-width: 950px;
+  max-width: 760px;
   color: var(--park-ink);
   text-shadow: 0 3px 0 #fff, 0 6px 0 rgba(23, 50, 77, 0.14);
 }
@@ -150,7 +150,7 @@
 }
 
 .attraction-hero--compact {
-  min-height: 48svh;
+  min-height: 36svh;
 }
 
 .park-intro {
@@ -1257,7 +1257,7 @@
 
 @media (max-width: 620px) {
   .attraction-hero {
-    min-height: 52svh;
+    min-height: 38svh;
   }
 
   .attraction-hero::before {
