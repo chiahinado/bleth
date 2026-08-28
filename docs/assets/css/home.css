@@ -82,6 +82,93 @@
   height: auto;
 }
 
+.map-label {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-weight: 1000;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.map-label--site {
+  top: 14.1%;
+  left: 41.7%;
+  width: 30%;
+  height: 4.2%;
+  color: #111;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 999px;
+  font-size: clamp(0.34rem, 1vw, 0.92rem);
+  letter-spacing: -0.025em;
+}
+
+.map-label--live {
+  top: 42.4%;
+  left: 8.8%;
+  width: 21.3%;
+  height: 10.2%;
+  flex-direction: column;
+  color: #fff;
+  background: linear-gradient(#1f82d0, #0756a5);
+  border: 3px solid #fff;
+  border-radius: 15% / 35%;
+  box-shadow: 0 0 0 3px #102235;
+  font-size: clamp(0.56rem, 2.45vw, 2.3rem);
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 0 #102235;
+}
+
+.map-label--live small {
+  margin-top: 0.25em;
+  font-size: 0.36em;
+  letter-spacing: 0.12em;
+}
+
+.map-label--shows,
+.map-label--extras,
+.map-label--fanclub {
+  height: 5.1%;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  font-size: clamp(0.3rem, 0.95vw, 0.86rem);
+  letter-spacing: 0.04em;
+}
+
+.map-label--shows {
+  top: 81.7%;
+  left: 11.6%;
+  width: 15.5%;
+  color: #fff;
+  background: #ca5800;
+  box-shadow: 0 0 0 2px #70320a;
+}
+
+.map-label--extras {
+  top: 81.8%;
+  left: 71.8%;
+  width: 14.8%;
+  color: #fff;
+  background: #4b961e;
+  box-shadow: 0 0 0 2px #214c11;
+}
+
+.map-label--fanclub {
+  top: 84.9%;
+  left: 34.8%;
+  width: 13.8%;
+  color: #ef4f72;
+  background: #fff8f5;
+  border-color: #ef7890;
+}
+
 .park-hotspots {
   position: absolute;
   z-index: 4;
@@ -207,5 +294,21 @@
     padding-inline: 0.5%;
     font-size: 0.38rem;
     letter-spacing: 0;
+  }
+
+  .map-label--site,
+  .map-label--shows,
+  .map-label--extras,
+  .map-label--fanclub {
+    border-width: 1px;
+  }
+
+  .map-label--live {
+    border-width: 1px;
+    box-shadow: 0 0 0 1px #102235;
+  }
+
+  .home-page .site-footer > a:last-child {
+    display: none;
   }
 }

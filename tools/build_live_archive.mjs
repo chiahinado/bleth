@@ -9,13 +9,13 @@ const details = [
   {
     d: "1999-06-11", date: "1999年6月11日（金）", title: "Live in AX", venue: "Live in AX",
     admission: "1,500円（1ドリンク付き）",
-    summary: "BLETHの初ライブ。観客は約30人。ここからライブアーカイブが始まります。",
+    summary: "BLETHの初ライブ。観客は約30人。",
     performers: ["イエモンのコピー", "PARANOIA"], images: ["photo-01.jpg"]
   },
   {
     d: "1999-09-11", date: "1999年9月11日（土）", title: "BLETH主催ライブ", venue: "いせトピア",
     admission: "500円",
-    summary: "BLETH初のホールライブとして開催された主催公演。観客は約300人。",
+    summary: "BLETH初のホールライブ。観客は約300人。",
     performers: ["trance floor", "COMPREETS", "PARANOIA"], images: ["photo-01.jpg", "ticket-01.jpg"]
   },
   {
@@ -26,46 +26,46 @@ const details = [
   },
   {
     d: "2000-01-10", date: "2000年1月10日（月）", title: "成人式イベント", venue: "マリーナ河芸",
-    admission: "無料", summary: "河芸町の成人式イベントにゲストとして出演した記録。",
+    admission: "無料", summary: "河芸町の成人式イベントにゲスト出演。",
     performers: [], images: ["photo-01.jpg"]
   },
   {
     d: "2000-03-26", date: "2000年3月26日（日）", title: "AMATEUR BAND FESTIVAL Vol.3", venue: "阿児アリーナ",
-    admission: "600円", summary: "阿児アリーナで開催されたアマチュアバンドフェスティバル。",
+    admission: "600円", summary: "阿児アリーナのアマチュアバンドフェスティバルに出演。",
     performers: [], images: ["photo-01.jpg", "ticket-01.jpg"]
   },
   {
     d: "2000-04-01", date: "2000年4月1日（土）", title: "END OF A CENTURY GIG", venue: "三重県営サンアリーナ",
-    admission: "800円", summary: "三重県営サンアリーナのサブアリーナで開催されたライブ。",
+    admission: "800円", summary: "三重県営サンアリーナのサブアリーナでライブ。",
     performers: ["BAD PENGUIN", "Forever Groly", "Pott L'Ar"], images: ["photo-01.jpg", "ticket-01.jpg"]
   },
   {
     d: "2000-06-11", date: "2000年6月11日（日）", title: "初心に帰ろうLIVE", venue: "Live in AX",
-    admission: "1,000円", summary: "BLETHの初ライブから1年。Live in AXへ戻って開催された「初心に帰ろうLIVE」。",
+    admission: "1,000円", summary: "BLETHの初ライブから1年。Live in AXで「初心に帰ろうLIVE」を開催。",
     performers: ["ラルクのコピー", "モロヘイヤ"], images: ["photo-01.jpg"]
   },
   {
     d: "2000-09-15", date: "2000年9月15日（金）", title: "END OF A CENTURY GIG", venue: "LIVEHOUSE QUESTION",
-    admission: "500円", summary: "小さな会場を多くの観客が埋め、大きな盛り上がりを見せたライブ。",
+    admission: "500円", summary: "小さな会場を多くの観客が埋める、大きな盛り上がりのライブ。",
     performers: ["ラルクのコピー", "PULYSILA", "モロヘイヤ"], images: ["photo-01.jpg", "photo-02.jpg", "ticket-01.jpg"]
   },
   {
     d: "2000-12-23", date: "2000年12月23日（土）", title: "12th LIGHT MUSIC FESTIVAL", venue: "玉城町農村環境改善センター",
     admission: "1,000円",
-    summary: "第15回国民文化祭・ひろしま2000の協賛事業として開催された、第12回LIGHT MUSIC FESTIVAL。BLETHは予選を通過して出演。",
+    summary: "第15回国民文化祭・ひろしま2000協賛事業、第12回LIGHT MUSIC FESTIVAL。BLETHは予選を通過して出演。",
     performers: ["Shine☆", "すぴりっつ", "P・Yドリーム", "BILLIEE DROP", "EXCESS"],
     images: ["photo-01.jpg", "photo-02.jpg", "photo-03.jpg", "ticket-01.png"]
   },
   {
     d: "2001-01-13", date: "2001年1月13日（土）", title: "Live in AX", venue: "Live in AX",
     admission: "1,500円（1ドリンク付き）",
-    summary: "PULYSILAのマンスリーライブに参加。ミスチルの楽曲を演奏した記録が残ります。",
+    summary: "PULYSILAのマンスリーライブに参加。ミスチルの楽曲を演奏。",
     performers: ["毒林檎", "PULYSILA"], images: ["photo-01.jpg"]
   },
   {
     d: "2001-03-03", date: "2001年3月3日（土）", title: "Live in AX", venue: "Live in AX",
     admission: "1,500円（1ドリンク付き）",
-    summary: "PULYSILAのマンスリーライブに参加。GLAYの楽曲とBLETHの楽曲を含む6曲を演奏し、SHINEのAX最終ライブを見送りました。",
+    summary: "PULYSILAのマンスリーライブに参加。GLAYの楽曲とBLETHの楽曲を含む6曲を演奏し、SHINEのAX最終ライブを見送る。",
     performers: ["Kuhnheit", "PULYSILA"], images: ["photo-01.jpg", "photo-02.jpg"]
   },
   {
@@ -76,18 +76,18 @@ const details = [
   },
   {
     d: "2001-07-15", date: "2001年7月15日（日）", title: "河崎天皇祭", venue: "河崎町",
-    admission: "無料", summary: "トラック上のステージで行われたBLETH単独ライブ。多くの来場者が集まる夏祭りでの公演です。",
+    admission: "無料", summary: "トラック上のステージでのBLETH単独ライブ。多くの来場者が集まる夏祭りでの公演です。",
     performers: [], images: ["photo-01.jpg", "photo-02.jpg"]
   },
   {
     d: "2001-08-01", date: "2001年8月1日（水）", title: "伊勢神宮夏祭り", venue: "伊勢神宮 外宮前",
-    admission: "無料", summary: "夏祭りでのライブ。EXCESSとの共演記録が残ります。",
+    admission: "無料", summary: "夏祭りでのライブ。EXCESSと共演。",
     performers: ["EXCESS"], images: ["photo-01.jpg", "photo-02.jpg"]
   },
   {
     d: "2001-08-04", date: "2001年8月4日（土）", title: "美里村夏祭り", venue: "美里村",
     admission: "無料",
-    summary: "K-Net（三重県軽音楽振興協議会）からの案内で、祭りのステージへ出演。会場全体が大きく盛り上がった記録です。",
+    summary: "K-Net（三重県軽音楽振興協議会）からの案内で、祭りのステージへ出演。会場全体が大きく盛り上がる。",
     performers: [], images: ["photo-01.jpg"]
   },
   {
@@ -132,13 +132,13 @@ const write = async (relativePath, content) => {
 const header = (prefix, liveHref) => `<header class="site-header is-scrolled" data-header>
     <a class="site-logo" href="${prefix}" aria-label="BLETHLAND トップ">
       <span>BLETHLAND</span>
-      <small>THE OFFICIAL ARCHIVE OF BLETH</small>
+      <small>THE OFFICIAL SITE OF BLETH</small>
     </a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="global-menu" data-menu-button>
       <span>MENU</span>
     </button>
     <nav class="global-menu" id="global-menu" aria-label="メインメニュー" data-menu>
-      <a href="${liveHref}" aria-current="page">LIVE ARCHIVE</a>
+      <a href="${liveHref}" aria-current="page">LIVE</a>
       <a href="${prefix}members/">MEMBERS</a>
       <a href="${prefix}music/">MUSIC</a>
       <a href="${prefix}shows/">SHOWS</a>
@@ -148,8 +148,8 @@ const header = (prefix, liveHref) => `<header class="site-header is-scrolled" da
 
 const footer = (prefix) => `<footer class="site-footer">
     <a class="footer-logo" href="${prefix}">BLETHLAND</a>
-    <p>THE OFFICIAL ARCHIVE OF BLETH</p>
-    <p>HISTORICAL ARCHIVE · LAST UPDATED 2004.08.29</p>
+    <p>THE OFFICIAL SITE OF BLETH</p>
+    <p>LAST UPDATED 2004.08.29</p>
     <a href="#main">ページ上部へ戻る</a>
   </footer>`;
 
@@ -165,7 +165,7 @@ ${items.map((event) => `            <article class="timeline-item">
                 <h3>${escapeHtml(event.title)}</h3>
                 <p>${escapeHtml(event.venue)}${event.note ? ` · ${escapeHtml(event.note)}` : ""}</p>
               </div>
-              ${event.detail ? `<a href="${event.d}/" aria-label="${escapeHtml(event.title)}の詳細を見る">詳細を見る</a>` : "<span>年表記録</span>"}
+              ${event.detail ? `<a href="${event.d}/" aria-label="${escapeHtml(event.title)}の詳細を見る">詳細を見る</a>` : "<span>公演情報</span>"}
             </article>`).join("\n")}
           </div>
         </section>`;
@@ -176,9 +176,9 @@ const liveIndex = `<!doctype html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BLETHのライブを、日付・会場・写真とともにたどるアーカイブです。">
+  <meta name="description" content="BLETHのライブ情報を、日付・会場・写真とともに紹介します。">
   <meta name="theme-color" content="#eef9ff">
-  <title>LIVE ARCHIVE | BLETHLAND</title>
+  <title>LIVE | BLETHLAND</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/live.css">
@@ -191,14 +191,14 @@ const liveIndex = `<!doctype html>
   <main id="main">
     <section class="page-hero live-hero">
       <p class="eyebrow">ATTRACTION 01</p>
-      <h1>LIVE ARCHIVE</h1>
+      <h1>LIVE</h1>
       <p>ライブ・写真</p>
     </section>
     <section class="live-intro section-shell">
-      <p class="section-kicker">HISTORY OF BLETH</p>
-      <h2>ライブの記録</h2>
-      <p class="section-lead">BLETHのライブを、日付・会場・写真とともにたどるアーカイブです。</p>
-      <p class="archive-count">1999–2003 · 26 EVENTS · 16 PHOTO ARCHIVES</p>
+      <p class="section-kicker">BLETH LIVE</p>
+      <h2>ライブ一覧</h2>
+      <p class="section-lead">BLETHのライブ情報を、日付・会場・写真とともに紹介します。</p>
+      <p class="archive-count">1999–2003 · 26 EVENTS · 16 PHOTO PAGES</p>
     </section>
     <div class="timeline section-shell">
 ${timeline}
@@ -212,7 +212,7 @@ ${timeline}
 </html>`;
 
 const imageCaption = (event, file, photoIndex, photoTotal) => {
-  if (file.startsWith("ticket")) return "当時のチケット";
+  if (file.startsWith("ticket")) return "チケット";
   return photoTotal > 1 ? `ライブ写真 ${photoIndex}` : "ライブ写真";
 };
 
@@ -241,7 +241,7 @@ ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).joi
   }).join("\n");
   const pager = `<nav class="event-pager" aria-label="ライブ詳細ページ">
         ${previous ? `<a href="../${previous.d}/"><span>PREVIOUS</span>${escapeHtml(previous.date)}</a>` : "<span></span>"}
-        <a class="archive-return" href="../">LIVE ARCHIVEへ戻る</a>
+        <a class="archive-return" href="../">LIVEへ戻る</a>
         ${next ? `<a class="next-event" href="../${next.d}/"><span>NEXT</span>${escapeHtml(next.date)}</a>` : "<span></span>"}
       </nav>`;
   const html = `<!doctype html>
@@ -249,9 +249,9 @@ ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).joi
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="${escapeHtml(event.date)} ${escapeHtml(event.title)}のライブ記録。">
+  <meta name="description" content="${escapeHtml(event.date)} ${escapeHtml(event.title)}のライブ情報。">
   <meta name="theme-color" content="#eef9ff">
-  <title>${escapeHtml(event.title)} | LIVE ARCHIVE | BLETHLAND</title>
+  <title>${escapeHtml(event.title)} | LIVE | BLETHLAND</title>
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/css/main.css">
   <link rel="stylesheet" href="../../assets/css/live.css">
@@ -264,19 +264,19 @@ ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).joi
   <main id="main">
     <nav class="breadcrumb section-shell" aria-label="パンくず">
       <a href="../../">BLETHLAND</a><span aria-hidden="true">/</span>
-      <a href="../">LIVE ARCHIVE</a><span aria-hidden="true">/</span>
+      <a href="../">LIVE</a><span aria-hidden="true">/</span>
       <span>${escapeHtml(event.date)}</span>
     </nav>
     <header class="event-hero section-shell">
-      <p class="eyebrow">LIVE ARCHIVE</p>
+      <p class="eyebrow">LIVE</p>
       <time datetime="${event.d}">${escapeHtml(event.date)}</time>
       <h1>${escapeHtml(event.title)}</h1>
       <p class="event-venue">${escapeHtml(event.venue)}</p>
     </header>
     <div class="event-content section-shell">
       <section class="event-panel event-summary">
-        <p class="section-kicker">ARCHIVE NOTE</p>
-        <h2>当時の記録</h2>
+        <p class="section-kicker">LIVE REPORT</p>
+        <h2>ライブレポート</h2>
         <p>${escapeHtml(event.summary)}</p>
       </section>
       <section class="event-panel event-info">
@@ -290,13 +290,13 @@ ${event.performers.map((name) => `            <li>${escapeHtml(name)}</li>`).joi
       </section>
 ${performers ? `      ${performers}\n` : ""}      <section class="event-gallery" aria-labelledby="gallery-title">
         <div class="section-heading">
-          <p class="section-kicker">PHOTO ARCHIVE</p>
+          <p class="section-kicker">PHOTO</p>
           <h2 id="gallery-title">写真・資料</h2>
         </div>
         <div class="gallery-grid">
 ${gallery}
         </div>
-        <p class="image-note">当時の小さな画像を、原寸を基準に掲載しています。</p>
+        <p class="image-note">小さな画像は、原寸を基準に掲載しています。</p>
       </section>
       ${pager}
     </div>
@@ -431,7 +431,7 @@ const liveCss = `.live-hero {
 }
 
 .event-hero {
-  padding-block: 100px 70px;
+  padding-block: 64px 48px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -445,11 +445,11 @@ const liveCss = `.live-hero {
 }
 
 .event-hero h1 {
-  max-width: 1000px;
+  max-width: 820px;
   margin: 15px 0 0;
-  font-size: clamp(3rem, 8.5vw, 7.6rem);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
   overflow-wrap: anywhere;
 }
 
@@ -682,4 +682,4 @@ const liveCss = `.live-hero {
 `;
 
 await write("assets/css/live.css", liveCss);
-console.log(`LIVE ARCHIVE generated: 1 index + ${details.length} detail pages`);
+console.log(`LIVE generated: 1 index + ${details.length} detail pages`);
