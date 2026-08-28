@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="個人情報を入力せず、ブラウザ内だけで楽しめるBLETHLANDのおみくじです。">
+  <meta name="description" content="新しいCSSアートと光の演出で再構築した、BLETHLANDのお化け屋敷です。">
   <meta name="theme-color" content="#eef9ff">
-  <title>BLETHLAND FORTUNE | EXTRAS | BLETHLAND</title>
+  <title>HAUNTED HOUSE | EXTRAS | BLETHLAND</title>
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/css/main.css">
   <link rel="stylesheet" href="../../assets/css/attractions.css">
   <script src="../../assets/js/main.js" defer></script>
   <script src="../../assets/js/attractions.js" defer></script>
 </head>
-<body class="park-attraction-page fortune-page">
+<body class="park-attraction-page haunted-page">
   <a class="skip-link" href="#main">本文へ移動</a>
   <header class="site-header is-scrolled" data-header>
     <a class="site-logo" href="../../" aria-label="BLETHLAND トップ">
@@ -32,20 +32,27 @@
   </header>
   <main id="main">
     <section class="page-hero attraction-hero attraction-hero--compact">
-      <p class="eyebrow">EXTRAS · TODAY'S TICKET</p>
-      <h1>BLETHLAND FORTUNE</h1>
-      <p>おみくじ</p>
+      <p class="eyebrow">EXTRAS · NIGHT RIDE</p>
+      <h1>HAUNTED HOUSE</h1>
+      <p>お化け屋敷</p>
     </section>
-    <section class="park-intro interactive-shell section-shell" aria-labelledby="fortune-intro-title">
-      <p class="section-kicker">ONE DAY TICKET</p><h2 id="fortune-intro-title">今日の一枚</h2>
-      <p class="section-lead">ボタンを押すと、BLETHLANDから今日の運勢チケットが届きます。</p>
-      <p class="archive-policy">生年月日などの入力は不要です。抽選結果は保存・送信されません。</p>
+    <section class="park-intro interactive-shell section-shell" aria-labelledby="haunted-intro-title">
+      <p class="section-kicker">AFTER DARK</p><h2 id="haunted-intro-title">夜のBLETHLANDへ</h2>
+      <p class="section-lead">明かりを消すと、静かな館の住人たちが姿を現します。</p>
     </section>
     <section class="interactive-section interactive-shell section-shell">
-      <div class="fortune-machine">
-        <span class="fortune-sign">BLETHLAND FORTUNE</span><br>
-        <button class="park-button" type="button" data-fortune-button>おみくじを引く</button>
-        <div class="fortune-ticket" data-fortune-result role="status" tabindex="-1" hidden></div>
+      <div class="haunted-wrap">
+        <div class="haunted-scene" data-haunted-scene>
+          <div class="haunted-house-art" aria-hidden="true">
+            <span class="house-body"></span><span class="house-tower"></span><span class="house-door"></span>
+            <span class="house-window house-window--one"></span><span class="house-window house-window--two"></span><span class="house-window house-window--three"></span>
+          </div>
+          <span class="css-ghost css-ghost--one" aria-hidden="true"></span><span class="css-ghost css-ghost--two" aria-hidden="true"></span>
+        </div>
+        <div class="haunted-controls">
+          <button class="park-button" type="button" aria-pressed="false" data-haunt-toggle>明かりを消す</button>
+          <p data-haunt-message>館の窓には、まだ明かりが灯っています。</p>
+        </div>
       </div>
     </section>
     <nav class="page-return section-shell" aria-label="ページ移動"><a class="text-link" href="../">EXTRASへ戻る</a></nav>
