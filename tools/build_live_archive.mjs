@@ -100,6 +100,7 @@ const details = [
 ];
 
 const timelineOnly = [
+  { d: "2004-07-24", display: "2004.07.24–25", title: "SUZUKA 8HOURS 2004", venue: "鈴鹿サーキット コカ・コーラマルチステーション", note: "BLETH、ELIANA、SORTITA、JURASSIC" },
   { d: "2001-08-19", title: "白山町 星のライブ", venue: "白山町" },
   { d: "2002-03-09", title: "津市民音楽祭", venue: "津リージョンプラザ", note: "ゲスト出演" },
   { d: "2002-11-16", title: "HELLO FROM MIE", venue: "嬉野町ふるさと会館", note: "NHKラジオ公開生放送" },
@@ -141,17 +142,10 @@ const header = (prefix, liveHref) => `<header class="site-header is-scrolled" da
       <a href="${liveHref}" aria-current="page">LIVE</a>
       <a href="${prefix}members/">MEMBERS</a>
       <a href="${prefix}music/">MUSIC</a>
-      <a href="${prefix}shows/">SHOWS</a>
       <a href="${prefix}extras/">EXTRAS</a>
+      <a href="${prefix}haunted-house/">HAUNTED HOUSE</a>
     </nav>
   </header>`;
-
-const footer = (prefix) => `<footer class="site-footer">
-    <a class="footer-logo" href="${prefix}">BLETHLAND</a>
-    <p>THE OFFICIAL SITE OF BLETH</p>
-    <p>LAST UPDATED 2004.08.29</p>
-    <a href="#main">ページ上部へ戻る</a>
-  </footer>`;
 
 const years = [...new Set(events.map((event) => event.d.slice(0, 4)))];
 const timeline = years.map((year) => {
@@ -160,7 +154,7 @@ const timeline = years.map((year) => {
           <h2 id="year-${year}">${year}</h2>
           <div class="timeline-list">
 ${items.map((event) => `            <article class="timeline-item">
-              <time datetime="${event.d}">${event.d.replaceAll("-", ".")}</time>
+              <time datetime="${event.d}">${event.display || event.d.replaceAll("-", ".")}</time>
               <div>
                 <h3>${escapeHtml(event.title)}</h3>
                 <p>${escapeHtml(event.venue)}${event.note ? ` · ${escapeHtml(event.note)}` : ""}</p>
@@ -192,13 +186,18 @@ const liveIndex = `<!doctype html>
     <section class="page-hero live-hero">
       <p class="eyebrow">ATTRACTION 01</p>
       <h1>LIVE</h1>
-      <p>ライブ・写真</p>
+      <p>ライブ情報</p>
     </section>
-    <section class="live-intro section-shell">
-      <p class="section-kicker">BLETH LIVE</p>
-      <h2>ライブ一覧</h2>
-      <p class="section-lead">BLETHのライブ情報を、日付・会場・写真とともに紹介します。</p>
-      <p class="archive-count">1999–2003 · 26 EVENTS · 16 PHOTO PAGES</p>
+    <section class="live-upcoming section-shell" aria-labelledby="next-live-title">
+      <p class="section-kicker">NEXT LIVE</p>
+      <h2 id="next-live-title">これからの予定</h2>
+      <div class="no-live-schedule"><strong>現在、ライブの予定はありません。</strong></div>
+    </section>
+    <section class="live-intro section-shell" aria-labelledby="live-history-title">
+      <p class="section-kicker">LIVE HISTORY</p>
+      <h2 id="live-history-title">これまでのライブ</h2>
+      <p class="section-lead">これまでのライブを、日付・会場・写真とともに紹介します。</p>
+      <p class="archive-count">1999–2004 · 27 EVENTS · 16 PHOTO PAGES</p>
     </section>
     <div class="timeline section-shell">
 ${timeline}
@@ -207,7 +206,6 @@ ${timeline}
       <a class="text-link" href="../">BLETHLANDへ戻る</a>
     </nav>
   </main>
-  ${footer("../")}
 </body>
 </html>`;
 
@@ -301,7 +299,6 @@ ${gallery}
       ${pager}
     </div>
   </main>
-  ${footer("../../")}
 </body>
 </html>`;
   await write(`live/${event.d}/index.html`, html);
@@ -319,15 +316,35 @@ const liveCss = `.live-hero {
   color: var(--pink);
 }
 
+.live-upcoming {
+  padding-block: 90px 38px;
+}
+
+.live-upcoming h2,
+.live-intro h2 {
+  margin: 0;
+  font-size: clamp(2.35rem, 6vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.no-live-schedule {
+  margin-top: 30px;
+  padding: clamp(24px, 4vw, 38px);
+  color: var(--ink);
+  background: #fff5c9;
+  border: 3px solid #ffd15d;
+  border-radius: 24px;
+  box-shadow: 0 7px 0 #a06a18;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+}
+
 .live-intro {
-  padding-block: 100px 54px;
+  padding-block: 56px 54px;
 }
 
 .live-intro h2 {
-  margin: 0;
-  font-size: clamp(2.8rem, 7vw, 5.6rem);
-  line-height: 1;
-  letter-spacing: -0.055em;
+  color: var(--paper);
 }
 
 .live-intro .section-lead {
