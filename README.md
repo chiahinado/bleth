@@ -2,6 +2,11 @@
 
 BLETHの旧公式ホームページ `BLETHLAND` を、遊園地の世界観を受け継ぎながら現代的に再構築するプロジェクトです。
 
+## 公開サイト
+
+- BLETHLAND: https://chiahinado.jp/bleth/
+- GitHub Pages配信元: `main` ブランチの `/docs`
+
 ## ディレクトリ
 
 - `blethland/`: 旧サイト原本。読み取り専用かつGit管理対象外
